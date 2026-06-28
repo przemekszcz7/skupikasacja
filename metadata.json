@@ -1,0 +1,6 @@
+{
+  "name": "Skup Aut i Kasacja Opolskie",
+  "description": "Profesjonalny skup samochodów, legalne złomowanie i kasacja pojazdów na terenie całego województwa opolskiego. Zapewniamy bezpłatną wycenę i odbiór transportem własnym.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
