@@ -111,6 +111,12 @@
         scroll-behavior: smooth;
       }
 
+      html, body {
+        overflow-x: hidden;
+        max-width: 100%;
+        width: 100%;
+      }
+
       body {
         font-family: var(--font-sans);
         color: var(--color-text);
@@ -1105,8 +1111,15 @@
 
       .area-cities-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
+
+      @media (min-width: 480px) {
+        .area-cities-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1rem;
+        }
       }
 
       @media (min-width: 768px) {
@@ -1201,7 +1214,7 @@
       .fb-card {
         background: var(--color-secondary);
         border-radius: 16px;
-        padding: 3rem;
+        padding: 2rem 1.25rem;
         border: 1px solid var(--color-border);
         box-shadow: var(--shadow-md);
         display: flex;
@@ -1212,6 +1225,12 @@
         margin: 0 auto;
         position: relative;
         overflow: hidden;
+      }
+
+      @media (min-width: 768px) {
+        .fb-card {
+          padding: 3rem;
+        }
       }
 
       .fb-card::before {
@@ -1289,27 +1308,38 @@
       }
 
       .big-cta-number {
-        font-size: 3rem;
+        font-size: 1.45rem;
         font-weight: 800;
         color: var(--color-secondary);
         font-family: var(--font-mono);
         margin-bottom: 2.5rem;
-        display: block;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
         letter-spacing: -0.02em;
         transition: var(--transition-base);
         animation: pulse-glow 2.5s infinite;
-        padding: 0.5rem 1.5rem;
+        padding: 0.5rem 1rem;
         border-radius: 12px;
         background: rgba(213, 0, 0, 0.15);
         border: 2px solid var(--color-accent);
-        display: inline-flex;
-        align-items: center;
-        gap: 1rem;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+      @media (min-width: 480px) {
+        .big-cta-number {
+          font-size: 2.2rem;
+          padding: 0.5rem 1.5rem;
+          gap: 0.75rem;
+        }
       }
 
       @media (min-width: 768px) {
         .big-cta-number {
-          font-size: 4rem;
+          font-size: 3.5rem;
+          padding: 0.5rem 2rem;
+          gap: 1rem;
         }
       }
 
@@ -1373,6 +1403,9 @@
       .contact-detail-text p {
         font-size: 1.05rem;
         font-weight: 500;
+        word-wrap: break-word;
+        word-break: break-word;
+        overflow-wrap: anywhere;
       }
 
       .contact-map-info {
@@ -2243,7 +2276,7 @@
               </div>
               <div class="contact-detail-text">
                 <h3>Facebook Profil</h3>
-                <p><a href="https://www.facebook.com/profile.php?id=61552961669043" target="_blank" rel="noopener noreferrer" style="color: #1877f2;">facebook.com/profile.php?id=61552961669043</a></p>
+                <p><a href="https://www.facebook.com/profile.php?id=61552961669043" target="_blank" rel="noopener noreferrer" style="color: #1877f2;">Skup & Kasacja Opolskie - Facebook</a></p>
               </div>
             </div>
 
