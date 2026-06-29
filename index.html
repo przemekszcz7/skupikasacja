@@ -87,19 +87,21 @@
     <!-- Style block containing elegant CSS3 variables and properties -->
     <style>
       :root {
-        --color-primary: #111111;
+        --color-primary: #121310;
         --color-secondary: #ffffff;
-        --color-accent: #d50000;
-        --color-accent-rgb: 213, 0, 0;
-        --color-section-bg: #f5f5f5;
-        --color-text: #1f2937;
-        --color-text-muted: #4b5563;
-        --color-border: rgba(0, 0, 0, 0.08);
+        --color-accent: #dd2b0e;
+        --color-accent-rgb: 221, 43, 14;
+        --color-section-bg: #fce8c3;
+        --color-text: #121310;
+        --color-text-muted: #2d2e29;
+        --color-border: rgba(18, 19, 16, 0.1);
+        --color-yellow: #fbcd05;
+        --color-gold: #fcbd07;
         --font-sans: 'Outfit', sans-serif;
         --font-mono: 'JetBrains Mono', monospace;
-        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
-        --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 16px -6px rgba(0, 0, 0, 0.05);
-        --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.12);
+        --shadow-sm: 0 2px 8px rgba(18, 19, 16, 0.05);
+        --shadow-md: 0 10px 25px -5px rgba(18, 19, 16, 0.08), 0 8px 16px -6px rgba(18, 19, 16, 0.05);
+        --shadow-lg: 0 20px 40px -10px rgba(18, 19, 16, 0.12);
         --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
@@ -124,7 +126,7 @@
       body {
         font-family: var(--font-sans);
         color: var(--color-text);
-        background-color: var(--color-secondary);
+        background-color: var(--color-section-bg);
         line-height: 1.6;
         overflow-x: hidden;
         -webkit-font-smoothing: antialiased;
@@ -170,7 +172,7 @@
       }
 
       .tread-pattern-light {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg stroke='%23d50000' stroke-width='2.5' stroke-opacity='0.015' fill='none'%3E%3Cpath d='M0,10 L20,30 L0,50' /%3E%3Cpath d='M60,10 L40,30 L60,50' /%3E%3Cpath d='M30,0 L30,60' stroke-dasharray='4 4' /%3E%3C/g%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg stroke='%23121310' stroke-width='2' stroke-opacity='0.035' fill='none'%3E%3Cpath d='M0,10 L20,30 L0,50' /%3E%3Cpath d='M60,10 L40,30 L60,50' /%3E%3Cpath d='M30,0 L30,60' stroke-dasharray='4 4' /%3E%3C/g%3E%3C/svg%3E");
       }
 
       /* Buttons & CTA styles */
@@ -193,13 +195,13 @@
       .btn-accent {
         background-color: var(--color-accent);
         color: var(--color-secondary);
-        box-shadow: 0 4px 15px rgba(213, 0, 0, 0.4);
+        box-shadow: 0 4px 15px rgba(var(--color-accent-rgb), 0.4);
       }
 
       .btn-accent:hover {
-        background-color: #ff1744;
+        background-color: #fc4b30;
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(213, 0, 0, 0.5);
+        box-shadow: 0 6px 20px rgba(var(--color-accent-rgb), 0.5);
       }
 
       .btn-secondary {
@@ -221,7 +223,7 @@
       }
 
       .btn-dark:hover {
-        background-color: #222222;
+        background-color: #22241e;
         transform: translateY(-2px);
         box-shadow: var(--shadow-md);
       }
@@ -229,13 +231,13 @@
       /* Animated glowing accents */
       @keyframes pulse-glow {
         0% {
-          box-shadow: 0 0 0 0 rgba(213, 0, 0, 0.4);
+          box-shadow: 0 0 0 0 rgba(var(--color-accent-rgb), 0.4);
         }
         70% {
-          box-shadow: 0 0 0 15px rgba(213, 0, 0, 0);
+          box-shadow: 0 0 0 15px rgba(var(--color-accent-rgb), 0);
         }
         100% {
-          box-shadow: 0 0 0 0 rgba(213, 0, 0, 0);
+          box-shadow: 0 0 0 0 rgba(var(--color-accent-rgb), 0);
         }
       }
 
@@ -293,12 +295,12 @@
 
       /* HEADER & NAVIGATION */
       header {
-        background-color: var(--color-primary);
-        color: var(--color-secondary);
+        background-color: var(--color-section-bg);
+        color: var(--color-primary);
         position: sticky;
         top: 0;
         z-index: 1000;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(18, 19, 16, 0.08);
         height: 70px;
         display: flex;
         align-items: center;
@@ -327,7 +329,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 4px 12px rgba(213, 0, 0, 0.3);
+        box-shadow: 0 4px 12px rgba(var(--color-accent-rgb), 0.3);
       }
 
       .logo-text {
@@ -363,6 +365,7 @@
       .nav-links a {
         font-size: 0.95rem;
         font-weight: 500;
+        color: var(--color-primary);
         opacity: 0.8;
         padding: 0.5rem 0;
         position: relative;
@@ -381,7 +384,7 @@
 
       .nav-links a:hover {
         opacity: 1;
-        color: var(--color-secondary);
+        color: var(--color-accent);
       }
 
       .nav-links a:hover::after {
@@ -408,7 +411,7 @@
         display: block;
         width: 100%;
         height: 3px;
-        background-color: var(--color-secondary);
+        background-color: var(--color-primary);
         border-radius: 2px;
         transition: var(--transition-base);
       }
@@ -427,8 +430,9 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(18, 19, 16, 0.05);
+        border: 1px solid rgba(18, 19, 16, 0.10);
+        color: var(--color-primary);
         padding: 0.5rem 1rem;
         border-radius: 6px;
         font-family: var(--font-mono);
@@ -458,7 +462,7 @@
           width: 100%;
           max-width: 320px;
           height: calc(100vh - 70px);
-          background-color: rgba(17, 17, 17, 0.98);
+          background-color: rgba(252, 232, 195, 0.98);
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
           flex-direction: column;
@@ -468,7 +472,7 @@
           transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
           z-index: 999;
           padding: 2.5rem;
-          border-left: 1px solid rgba(255, 255, 255, 0.08);
+          border-left: 1px solid rgba(18, 19, 16, 0.08);
           overflow-y: auto;
         }
 
@@ -514,8 +518,8 @@
 
       /* SEKCJA 1 – HERO */
       .hero {
-        background-color: var(--color-primary);
-        color: var(--color-secondary);
+        background-color: var(--color-section-bg);
+        color: var(--color-primary);
         position: relative;
         padding: 4rem 0;
         overflow: hidden;
@@ -535,7 +539,7 @@
         content: '';
         position: absolute;
         inset: 0;
-        background: radial-gradient(circle at 70% 30%, rgba(213, 0, 0, 0.12) 0%, transparent 60%);
+        background: radial-gradient(circle at 70% 30%, rgba(var(--color-accent-rgb), 0.12) 0%, transparent 60%);
         pointer-events: none;
         z-index: 1;
       }
@@ -567,14 +571,14 @@
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        background-color: rgba(213, 0, 0, 0.1);
+        background-color: rgba(var(--color-accent-rgb), 0.1);
         border: 1.5px solid var(--color-accent);
         padding: 0.4rem 1rem;
         border-radius: 50px;
         font-family: var(--font-mono);
         font-size: 0.75rem;
         font-weight: 700;
-        color: var(--color-secondary);
+        color: var(--color-primary);
         text-transform: uppercase;
         letter-spacing: 0.1em;
         margin-bottom: 1.5rem;
@@ -584,7 +588,7 @@
         font-size: 2.5rem;
         line-height: 1.1;
         margin-bottom: 1.5rem;
-        color: var(--color-secondary);
+        color: var(--color-primary);
         text-transform: uppercase;
       }
 
@@ -601,7 +605,7 @@
 
       .hero-subtext {
         font-size: 1.1rem;
-        color: rgba(255, 255, 255, 0.75);
+        color: var(--color-text-muted);
         margin-bottom: 2rem;
         max-width: 600px;
       }
@@ -627,7 +631,7 @@
         gap: 0.75rem;
         font-size: 0.95rem;
         font-weight: 500;
-        color: rgba(255, 255, 255, 0.9);
+        color: var(--color-text);
       }
 
       .hero-benefits svg {
@@ -641,12 +645,27 @@
         gap: 1rem;
       }
 
+      #btn-hero-pricing {
+        color: var(--color-primary);
+        border: 2px solid rgba(18, 19, 16, 0.25);
+      }
+
+      #btn-hero-pricing:hover {
+        background-color: rgba(18, 19, 16, 0.05);
+        border-color: var(--color-primary);
+      }
+
       /* Hero Premium Card (Right Column) */
       .hero-card {
         padding: 2.5rem;
         border-radius: 16px;
         position: relative;
         overflow: hidden;
+        background: rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(18, 19, 16, 0.08);
+        box-shadow: var(--shadow-md);
       }
 
       .hero-card::before {
@@ -661,12 +680,12 @@
 
       .hero-card-header {
         margin-bottom: 2rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(18, 19, 16, 0.08);
         padding-bottom: 1.25rem;
       }
 
       .hero-card-header h3 {
-        color: var(--color-secondary);
+        color: var(--color-primary);
         font-size: 1.5rem;
         text-transform: uppercase;
         letter-spacing: -0.01em;
@@ -674,7 +693,7 @@
 
       .hero-card-header p {
         font-size: 0.9rem;
-        color: rgba(255, 255, 255, 0.5);
+        color: var(--color-text-muted);
         font-family: var(--font-mono);
         margin-top: 0.25rem;
       }
@@ -689,7 +708,7 @@
         display: flex;
         align-items: center;
         gap: 1.25rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(18, 19, 16, 0.05);
         padding-bottom: 1rem;
       }
 
@@ -701,8 +720,8 @@
       .hero-card-item-icon {
         width: 44px;
         height: 44px;
-        background-color: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: rgba(var(--color-accent-rgb), 0.05);
+        border: 1px solid rgba(var(--color-accent-rgb), 0.15);
         border-radius: 8px;
         display: flex;
         align-items: center;
@@ -711,14 +730,14 @@
       }
 
       .hero-card-item-text h4 {
-        color: var(--color-secondary);
+        color: var(--color-primary);
         font-size: 1rem;
         font-weight: 600;
       }
 
       .hero-card-item-text p {
         font-size: 0.85rem;
-        color: rgba(255, 255, 255, 0.50);
+        color: var(--color-text-muted);
       }
 
       /* SEKCJA 2 – NASZE USŁUGI */
@@ -763,7 +782,7 @@
       .service-card:hover {
         transform: translateY(-8px);
         box-shadow: var(--shadow-lg);
-        border-color: rgba(213, 0, 0, 0.2);
+        border-color: rgba(var(--color-accent-rgb), 0.2);
       }
 
       .service-card:hover::after {
@@ -773,8 +792,8 @@
       .service-icon {
         width: 64px;
         height: 64px;
-        background-color: rgba(213, 0, 0, 0.05);
-        border: 1px dashed rgba(213, 0, 0, 0.3);
+        background-color: rgba(var(--color-accent-rgb), 0.05);
+        border: 1px dashed rgba(var(--color-accent-rgb), 0.3);
         border-radius: 12px;
         display: flex;
         align-items: center;
@@ -854,7 +873,7 @@
       .buy-card:hover {
         transform: translateY(-5px);
         box-shadow: var(--shadow-md);
-        border-color: rgba(213, 0, 0, 0.2);
+        border-color: rgba(var(--color-accent-rgb), 0.2);
       }
 
       .buy-card-icon {
@@ -886,14 +905,14 @@
 
       /* SEKCJA 4 – LEGALNE ZŁOMOWANIE */
       .legal-scrap {
-        background-color: var(--color-primary);
-        color: var(--color-secondary);
+        background-color: var(--color-section-bg);
+        color: var(--color-primary);
         position: relative;
         overflow: hidden;
       }
 
       .legal-scrap .section-header h2 {
-        color: var(--color-secondary);
+        color: var(--color-primary);
       }
 
       .legal-grid {
@@ -928,14 +947,14 @@
       }
 
       .legal-card h3 {
-        color: var(--color-secondary);
+        color: var(--color-primary);
         font-size: 1.25rem;
         margin-bottom: 1rem;
         text-transform: uppercase;
       }
 
       .legal-card p {
-        color: rgba(255, 255, 255, 0.7);
+        color: var(--color-text-muted);
         font-size: 0.95rem;
       }
 
@@ -991,7 +1010,7 @@
       .timeline-num {
         width: 50px;
         height: 50px;
-        background-color: var(--color-secondary);
+        background-color: var(--color-yellow);
         border: 4px solid var(--color-primary);
         border-radius: 50%;
         display: flex;
@@ -1007,9 +1026,9 @@
 
       .timeline-step:hover .timeline-num {
         border-color: var(--color-accent);
-        color: var(--color-accent);
+        color: var(--color-primary);
         transform: scale(1.1);
-        box-shadow: 0 0 15px rgba(213, 0, 0, 0.2);
+        box-shadow: 0 0 15px rgba(var(--color-accent-rgb), 0.3);
       }
 
       .timeline-step h3 {
@@ -1055,13 +1074,13 @@
       .why-card:hover {
         transform: translateY(-5px);
         box-shadow: var(--shadow-md);
-        border-color: rgba(213, 0, 0, 0.2);
+        border-color: rgba(var(--color-accent-rgb), 0.2);
       }
 
       .why-card-icon {
         width: 44px;
         height: 44px;
-        background-color: rgba(213, 0, 0, 0.05);
+        background-color: rgba(var(--color-accent-rgb), 0.05);
         color: var(--color-accent);
         border-radius: 8px;
         display: flex;
@@ -1102,7 +1121,7 @@
 
       /* Custom geographic interactive-looking SVG map of Opole Voivodeship */
       .area-map {
-        background: #0d0d0d;
+        background: var(--color-primary);
         border-radius: 16px;
         padding: 2rem;
         border: 1.5px solid rgba(255, 255, 255, 0.08);
@@ -1115,7 +1134,7 @@
         content: '';
         position: absolute;
         inset: 0;
-        background-image: radial-gradient(circle at 50% 50%, rgba(213, 0, 0, 0.15) 0%, transparent 80%);
+        background-image: radial-gradient(circle at 50% 50%, rgba(var(--color-accent-rgb), 0.15) 0%, transparent 80%);
         pointer-events: none;
       }
 
@@ -1188,8 +1207,8 @@
 
       /* SEKCJA 8 – LICZNIKI ZALET */
       .counters {
-        background-color: var(--color-primary);
-        color: var(--color-secondary);
+        background-color: var(--color-section-bg);
+        color: var(--color-primary);
         position: relative;
         padding: 4.5rem 0;
       }
@@ -1213,7 +1232,7 @@
       .counter-number {
         font-size: 3.5rem;
         font-weight: 800;
-        color: var(--color-secondary);
+        color: var(--color-primary);
         line-height: 1;
         margin-bottom: 0.5rem;
         font-family: var(--font-sans);
@@ -1228,14 +1247,14 @@
         font-family: var(--font-mono);
         text-transform: uppercase;
         font-size: 0.8rem;
-        color: rgba(255, 255, 255, 0.5);
+        color: var(--color-text-muted);
         letter-spacing: 0.15em;
         margin-bottom: 0.5rem;
       }
 
       .counter-desc {
         font-size: 0.95rem;
-        color: rgba(255, 255, 255, 0.80);
+        color: var(--color-text);
       }
 
       /* SEKCJA 9 – FACEBOOK */
@@ -1300,25 +1319,27 @@
 
       /* SEKCJA 10 – DUŻE CTA */
       .big-cta {
-        background: linear-gradient(135deg, #111111 0%, #222222 50%, #800000 100%);
-        color: var(--color-secondary);
+        background: linear-gradient(135deg, var(--color-section-bg) 0%, #ffffff 50%, var(--color-section-bg) 100%);
+        color: var(--color-primary);
         position: relative;
         overflow: hidden;
         text-align: center;
         padding: 6rem 0;
+        border-top: 1px solid rgba(18, 19, 16, 0.08);
+        border-bottom: 1px solid rgba(18, 19, 16, 0.08);
       }
 
       .big-cta::before {
         content: '';
         position: absolute;
         inset: 0;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M0 10 L40 30 M40 30 L80 10 M80 10 L120 30 M0 50 L40 70 M40 70 L80 50 M80 50 L120 70' fill='none' stroke='%23ffffff' stroke-width='6' stroke-opacity='0.02' stroke-dasharray='10 5'/%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M0 10 L40 30 M40 30 L80 10 M80 10 L120 30 M0 50 L40 70 M40 70 L80 50 M80 50 L120 70' fill='none' stroke='%23121310' stroke-width='6' stroke-opacity='0.02' stroke-dasharray='10 5'/%3E%3C/svg%3E");
         opacity: 0.6;
         pointer-events: none;
       }
 
       .big-cta h2 {
-        color: var(--color-secondary);
+        color: var(--color-primary);
         font-size: 2.25rem;
         max-width: 800px;
         margin: 0 auto 1rem auto;
@@ -1332,7 +1353,7 @@
       }
 
       .big-cta p {
-        color: rgba(255, 255, 255, 0.85);
+        color: var(--color-text-muted);
         font-size: 1.15rem;
         margin-bottom: 2.5rem;
         max-width: 600px;
@@ -1342,7 +1363,7 @@
       .big-cta-number {
         font-size: 1.45rem;
         font-weight: 800;
-        color: var(--color-secondary);
+        color: var(--color-primary);
         font-family: var(--font-mono);
         margin-bottom: 2.5rem;
         display: inline-flex;
@@ -1353,7 +1374,7 @@
         animation: pulse-glow 2.5s infinite;
         padding: 0.5rem 1rem;
         border-radius: 12px;
-        background: rgba(213, 0, 0, 0.15);
+        background: rgba(var(--color-accent-rgb), 0.15);
         border: 2px solid var(--color-accent);
         max-width: 100%;
         box-sizing: border-box;
@@ -1377,13 +1398,13 @@
 
       .big-cta-number:hover {
         transform: scale(1.05);
-        background: rgba(213, 0, 0, 0.25);
-        border-color: #ff1744;
+        background: rgba(var(--color-accent-rgb), 0.25);
+        border-color: var(--color-accent);
       }
 
       /* SEKCJA 11 – KONTAKT */
       .contact-section {
-        background-color: var(--color-secondary);
+        background-color: var(--color-section-bg);
       }
 
       .contact-grid {
@@ -1441,8 +1462,8 @@
       }
 
       .contact-map-info {
-        background-color: var(--color-primary);
-        color: var(--color-secondary);
+        background-color: var(--color-section-bg);
+        color: var(--color-primary);
         border-radius: 16px;
         padding: 3rem;
         display: flex;
@@ -1450,25 +1471,27 @@
         justify-content: center;
         position: relative;
         overflow: hidden;
+        border: 1px solid rgba(18, 19, 16, 0.08);
+        box-shadow: var(--shadow-sm);
       }
 
       .contact-map-info::before {
         content: '';
         position: absolute;
         inset: 0;
-        background-image: radial-gradient(circle at 10% 90%, rgba(213, 0, 0, 0.15) 0%, transparent 60%);
+        background-image: radial-gradient(circle at 10% 90%, rgba(var(--color-accent-rgb), 0.15) 0%, transparent 60%);
         pointer-events: none;
       }
 
       .contact-map-info h3 {
-        color: var(--color-secondary);
+        color: var(--color-primary);
         font-size: 1.65rem;
         margin-bottom: 1.25rem;
         text-transform: uppercase;
       }
 
       .contact-map-info p {
-        color: rgba(255, 255, 255, 0.75);
+        color: var(--color-text-muted);
         font-size: 1.05rem;
         margin-bottom: 2rem;
       }
@@ -1480,8 +1503,9 @@
       }
 
       .contact-badge-item {
-        background-color: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: rgba(18, 19, 16, 0.05);
+        border: 1px solid rgba(18, 19, 16, 0.10);
+        color: var(--color-primary);
         padding: 0.5rem 1rem;
         border-radius: 6px;
         font-size: 0.85rem;
@@ -1490,9 +1514,9 @@
 
       /* FOOTER */
       footer {
-        background-color: #0b0b0b;
-        color: var(--color-secondary);
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        background-color: var(--color-section-bg);
+        color: var(--color-primary);
+        border-top: 1px solid rgba(18, 19, 16, 0.1);
         padding: 4rem 0 2rem 0;
       }
 
@@ -1516,19 +1540,19 @@
       }
 
       .footer-about h3 {
-        color: var(--color-secondary);
+        color: var(--color-primary);
         font-size: 1.25rem;
         margin-bottom: 1.25rem;
       }
 
       .footer-about p {
-        color: rgba(255, 255, 255, 0.6);
+        color: var(--color-text-muted);
         font-size: 0.95rem;
         margin-bottom: 1.5rem;
       }
 
       .footer-links h3 {
-        color: var(--color-secondary);
+        color: var(--color-primary);
         font-size: 1.1rem;
         margin-bottom: 1.25rem;
         text-transform: uppercase;
@@ -1542,7 +1566,7 @@
       }
 
       .footer-links-list a {
-        color: rgba(255, 255, 255, 0.6);
+        color: var(--color-text-muted);
         font-size: 0.95rem;
       }
 
@@ -1552,7 +1576,7 @@
       }
 
       .footer-contact h3 {
-        color: var(--color-secondary);
+        color: var(--color-primary);
         font-size: 1.1rem;
         margin-bottom: 1.25rem;
         text-transform: uppercase;
@@ -1563,7 +1587,7 @@
         align-items: center;
         gap: 0.75rem;
         margin-bottom: 1rem;
-        color: rgba(255, 255, 255, 0.7);
+        color: var(--color-text-muted);
         font-size: 0.95rem;
       }
 
@@ -1573,14 +1597,15 @@
       }
 
       .footer-bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        border-top: 1px solid rgba(18, 19, 16, 0.1);
         padding-top: 2rem;
         text-align: center;
       }
 
       .footer-bottom p {
-        color: rgba(255, 255, 255, 0.4);
+        color: var(--color-text-muted);
         font-size: 0.85rem;
+        opacity: 0.8;
       }
 
       /* STICKY BOTTOM MOBILE PHONE BAR */
@@ -1589,12 +1614,12 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        background-color: var(--color-primary);
+        background-color: var(--color-section-bg);
         border-top: 2.5px solid var(--color-accent);
         padding: 0.85rem 1.25rem;
         display: none;
         z-index: 9999;
-        box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 -4px 15px rgba(18, 19, 16, 0.1);
       }
 
       @media (max-width: 767px) {
@@ -1618,7 +1643,7 @@
         align-items: center;
         justify-content: center;
         gap: 0.75rem;
-        box-shadow: 0 4px 12px rgba(213, 0, 0, 0.3);
+        box-shadow: 0 4px 12px rgba(var(--color-accent-rgb), 0.3);
         animation: pulse-glow 2s infinite;
       }
 
@@ -1650,8 +1675,8 @@
         <!-- Logo -->
         <a href="#" class="logo" id="logo-main">
           <div class="logo-text">
-            Skup & Kasacja
-            <span>Województwo Opolskie</span>
+            Złomowanie & Kasacja
+            <span>Skup Aut • Woj. Opolskie</span>
           </div>
         </a>
 
@@ -1689,13 +1714,13 @@
     </header>
 
     <!-- SEKCJA 1 – HERO SECTION -->
-    <section class="hero tread-pattern-dark" id="hero-sec">
+    <section class="hero tread-pattern-light" id="hero-sec">
       <!-- Geometric tech background overlays -->
       <div class="hero-grid-decor">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.03)" stroke-width="1"/>
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(18, 19, 16, 0.03)" stroke-width="1"/>
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid)" />
@@ -1716,33 +1741,33 @@
           </div>
           
           <h1 id="hero-title">
-            Skup Aut <span>Złomowanie i Kasacja</span> Pojazdów
+            Złomowanie i Kasacja <span>Pojazdów</span> & Skup Aut
           </h1>
           
           <p class="hero-subtext" id="hero-subtitle">
-            Skupujemy samochody osobowe, dostawcze i terenowe w każdym stanie technicznym. Oferujemy legalną i bezpieczną kasację pojazdów, bezpłatny odbiór na terenie regionu oraz pomoc przy wszystkich formalnościach.
+            Złomujemy, kasujemy i skupujemy auta osobowe, dostawcze i ciężarowe na Opolszczyźnie. Odbiór własną lawetą gratis, gotówka od ręki i komplet dokumentów.
           </p>
           
           <ul class="hero-benefits" id="benefits-list">
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Bezpłatna wycena online i tel.
+              Bezpłatna wycena w minutę
             </li>
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Legalna kasacja z zaświadczeniem
+              Legalna kasacja (zaświadczenie od ręki)
             </li>
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Dokumenty do wyrejestrowania i OC
+              Dokumenty do urzędu i zwrotu OC
             </li>
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Odbiór własnym transportem
+              Darmowy odbiór naszą lawetą
             </li>
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Działamy na terenie całego opolskiego
+              Dojazd w całym woj. opolskim
             </li>
           </ul>
           
@@ -1766,31 +1791,11 @@
             
             <div class="hero-card-item">
               <div class="hero-card-item-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div class="hero-card-item-text">
-                <h4>Województwo Opolskie</h4>
-                <p>Ekspresowy dojazd na terenie całego regionu</p>
-              </div>
-            </div>
-
-            <div class="hero-card-item">
-              <div class="hero-card-item-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
-              </div>
-              <div class="hero-card-item-text">
-                <h4>Skup aut i samochodów</h4>
-                <p>Każdy rocznik, marka i stan mechaniczny</p>
-              </div>
-            </div>
-
-            <div class="hero-card-item">
-              <div class="hero-card-item-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               </div>
               <div class="hero-card-item-text">
-                <h4>Legalna Kasacja</h4>
-                <p>Wydajemy oficjalne zaświadczenia o demontażu</p>
+                <h4>Legalne Złomowanie</h4>
+                <p>Oficjalne zaświadczenie o demontażu od ręki.</p>
               </div>
             </div>
 
@@ -1799,8 +1804,8 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
               </div>
               <div class="hero-card-item-text">
-                <h4>Darmowy Odbiór Auta</h4>
-                <p>Posiadamy profesjonalną flotę lawet do transportu</p>
+                <h4>Własna Laweta Gratis</h4>
+                <p>Bezpłatny transport z dowolnego miejsca.</p>
               </div>
             </div>
 
@@ -1809,8 +1814,28 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
               </div>
               <div class="hero-card-item-text">
-                <h4>Komplet Dokumentów</h4>
-                <p>Ułatwiamy formalności do wydziału komunikacji i ubezpieczalni</p>
+                <h4>Brak Formalności</h4>
+                <p>Wszystko przygotujemy dla urzędu i ubezpieczalni.</p>
+              </div>
+            </div>
+
+            <div class="hero-card-item">
+              <div class="hero-card-item-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+              </div>
+              <div class="hero-card-item-text">
+                <h4>Skup Aut</h4>
+                <p>Kupujemy też auta sprawne i nowsze za gotówkę.</p>
+              </div>
+            </div>
+
+            <div class="hero-card-item">
+              <div class="hero-card-item-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="hero-card-item-text">
+                <h4>Całe Opolskie</h4>
+                <p>Szybki dojazd do każdego miasta i gminy.</p>
               </div>
             </div>
 
@@ -1826,57 +1851,57 @@
         
         <div class="section-header">
           <span class="badge">Poznaj Nasze Usługi</span>
-          <h2>Oferowane Usługi Motoryzacyjne</h2>
-          <p>Gwarantujemy w pełni legalną działalność, profesjonalne podejście oraz szybką wypłatę gotówki.</p>
+          <h2>Nasze Usługi</h2>
+          <p>Legalna kasacja, szybka wycena i gotówka od ręki.</p>
         </div>
 
         <div class="services-grid" id="services-list">
           
           <!-- Card 1 -->
-          <div class="service-card" id="card-skup-aut">
-            <div class="service-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="22" height="13" rx="2" ry="2"/><line x1="12" y1="21" x2="12" y2="16"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
-            </div>
-            <h3>Skup Aut</h3>
-            <p>
-              Skupujemy pojazdy używane każdego typu, marki i modelu. Oferujemy uczciwe ceny oparte na aktualnej wartości rynkowej Twojego samochodu. Zapewniamy bezpłatną wstępną wycenę telefoniczną.
-            </p>
-            <ul class="service-bullets">
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Pojazdy osobowe, dostawcze i SUV-y</li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Auta nowsze oraz starsze roczniki</li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Szybka, bezpłatna wycena</li>
-            </ul>
-          </div>
-
-          <!-- Card 2 -->
           <div class="service-card" id="card-zlomowanie">
             <div class="service-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
             </div>
             <h3>Złomowanie Pojazdów</h3>
             <p>
-              W pełni legalne złomowanie oraz kasacja niesprawnych samochodów. Jako uprawniona stacja demontażu zapewniamy pełen komplet wymaganych prawem dokumentów, co umożliwia natychmiastowe wyrejestrowanie.
+              Legalne złomowanie aut. Wydajemy urzędowe zaświadczenie niezbędne do wyrejestrowania i zwrotu składki OC.
             </p>
             <ul class="service-bullets">
               <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Oficjalne zaświadczenie o kasacji</li>
               <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Pomoc w zamknięciu polisy OC</li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Dokumentacja do zwrotu składki ubezpieczenia</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Dokumentacja do zwrotu składki</li>
             </ul>
           </div>
 
-          <!-- Card 3 -->
+          <!-- Card 2 -->
           <div class="service-card" id="card-transport">
             <div class="service-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
             </div>
             <h3>Bezpłatny Odbiór</h3>
             <p>
-              Nie musisz martwić się o transport uszkodzonego lub powypadkowego samochodu. Odbieramy pojazdy ze wskazanego adresu na terenie województwa opolskiego własnym, wyspecjalizowanym transportem.
+              Odbierzemy Twoje uszkodzone auto bezpośrednio spod domu własną lawetą – całkowicie bezpłatnie.
             </p>
             <ul class="service-bullets">
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Profesjonalna autolaweta do odbioru</li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Koszt transportu: 0 zł dla klienta</li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Dogodne i elastyczne godziny odbioru</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Własna autolaweta do odbioru</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Koszt transportu: 0 zł</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Elastyczne godziny odbioru</li>
+            </ul>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="service-card" id="card-skup-aut">
+            <div class="service-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="22" height="13" rx="2" ry="2"/><line x1="12" y1="21" x2="12" y2="16"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+            </div>
+            <h3>Dodatkowo: Skup Aut</h3>
+            <p>
+              Skupujemy też samochody sprawne, nowsze i zadbane. Oferujemy uczciwe, rynkowe ceny płatne gotówką.
+            </p>
+            <ul class="service-bullets">
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Auta sprawne, osobowe i dostawcze</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Każdy rocznik i stan techniczny</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Szybka wycena przez telefon</li>
             </ul>
           </div>
 
@@ -1891,8 +1916,8 @@
         
         <div class="section-header">
           <span class="badge">Szeroka Oferta</span>
-          <h2>Jakie Pojazdy Skupujemy?</h2>
-          <p>Kupimy niemal każde auto niezależnie od stopnia zużycia, wieku, przeznaczenia czy awarii mechanicznych.</p>
+          <h2>Co Skupujemy i Złomujemy?</h2>
+          <p>Przyjmujemy auta w każdym stanie technicznym i wizualnym.</p>
         </div>
 
         <div class="buy-grid" id="what-we-buy-list">
@@ -1903,7 +1928,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
             </div>
             <h3>Osobowe</h3>
-            <p>Miejskie, sedany, kombi, hatchbacki - wszystkie marki i roczniki.</p>
+            <p>Wszystkie marki, modele i roczniki.</p>
           </div>
 
           <!-- Item 2 -->
@@ -1912,7 +1937,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
             </div>
             <h3>Dostawcze</h3>
-            <p>Busy, furgony, blaszaki, skrzyniowe - od ręki, w każdym stanie.</p>
+            <p>Dostawcze, busy i vany w każdym stanie.</p>
           </div>
 
           <!-- Item 3 -->
@@ -1921,7 +1946,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 16-2-2.73a2 2 0 0 0-3.2 0L14 16H8l-1.8-2.73a2 2 0 0 0-3.2 0L1 16V12c0-.55.45-1 1-1h1c.6 0 1-.4 1-1V5c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v5c0 .6.4 1 1 1h1c.55 0 1 .45 1 1v4Z"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/></svg>
             </div>
             <h3>Terenowe</h3>
-            <p>Auta z napędem 4x4, SUV-y, pojazdy rekreacyjne i robocze.</p>
+            <p>SUV-y, auta 4x4 i rekreacyjne.</p>
           </div>
 
           <!-- Item 4 -->
@@ -1930,7 +1955,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
             </div>
             <h3>Uszkodzone</h3>
-            <p>Z awariami silnika, skrzyni biegów, zawieszenia lub elektroniki.</p>
+            <p>Z awarią silnika, skrzyni biegów czy zawieszenia.</p>
           </div>
 
           <!-- Item 5 -->
@@ -1939,7 +1964,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
             </div>
             <h3>Powypadkowe</h3>
-            <p>Po kolizjach, wypadkach, poważnie uszkodzone strukturalnie.</p>
+            <p>Rozbite, po kolizjach i ciężkich wypadkach.</p>
           </div>
 
           <!-- Item 6 -->
@@ -1948,7 +1973,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
             </div>
             <h3>Niesprawne</h3>
-            <p>Nienadające się do dalszej jazdy, stare, zaniedbane.</p>
+            <p>Stare, zardzewiałe, nienadające się do jazdy.</p>
           </div>
 
           <!-- Item 7 -->
@@ -1957,7 +1982,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
             </div>
             <h3>Bez Ważnego OC</h3>
-            <p>Pomagamy rozwiązać problem z brakiem ubezpieczenia OC.</p>
+            <p>Kupujemy auta bez ważnego ubezpieczenia OC.</p>
           </div>
 
           <!-- Item 8 -->
@@ -1966,7 +1991,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
             <h3>Bez Przeglądu</h3>
-            <p>Auta, które nie przeszły lub nie posiadają badania technicznego.</p>
+            <p>Bez ważnego badania technicznego / przeglądu.</p>
           </div>
 
         </div>
@@ -1980,37 +2005,37 @@
         
         <div class="section-header">
           <span class="badge" style="color: var(--color-accent)">100% Zgodnie z Prawem</span>
-          <h2 style="color: var(--color-secondary)">Legalna Kasacja i Złomowanie Pojazdów</h2>
-          <p style="color: rgba(255,255,255,0.7)">Działamy oficjalnie i zgodnie z wymogami ochrony środowiska. Sprzedając lub złomując pojazd u nas, zyskujesz pełne bezpieczeństwo prawne.</p>
+          <h2 style="color: var(--color-primary)">Legalna Kasacja i Złomowanie Pojazdów</h2>
+          <p style="color: var(--color-text-muted)">Pełne bezpieczeństwo prawne i legalność. Wszystkie formalności załatwiamy od ręki.</p>
         </div>
 
         <div class="legal-grid" id="legal-steps">
           
           <!-- Card 1 -->
-          <div class="legal-card glass-panel" id="legal-card-1">
+          <div class="legal-card glass-panel-light" id="legal-card-1">
             <div>
               <div class="legal-card-num">01</div>
-              <h3>Komplet Dokumentów</h3>
+              <h3>Zaświadczenie od Ręki</h3>
             </div>
-            <p>Wydajemy oficjalne, honorowane przez urzędy zaświadczenie o demontażu pojazdu. To gwarancja, że auto przestało istnieć w świetle prawa i nie będą generowane z jego tytułu żadne opłaty.</p>
+            <p>Dajemy oficjalny dokument o demontażu. Auto przestaje istnieć w świetle prawa i nie płacisz za nie opłat.</p>
           </div>
 
           <!-- Card 2 -->
-          <div class="legal-card glass-panel" id="legal-card-2">
+          <div class="legal-card glass-panel-light" id="legal-card-2">
             <div>
               <div class="legal-card-num">02</div>
-              <h3>Wyrejestrowanie Pojazdu</h3>
+              <h3>Wyrejestrowanie Auta</h3>
             </div>
-            <p>Dzięki naszym dokumentom możesz bez przeszkód złożyć wniosek o wyrejestrowanie pojazdu w Wydziale Komunikacji w terminie 30 dni, co ostatecznie zamyka historię pojazdu.</p>
+            <p>Z naszym zaświadczeniem bez problemu wyrejestrujesz auto w Wydziale Komunikacji i zamkniesz jego historię.</p>
           </div>
 
           <!-- Card 3 -->
-          <div class="legal-card glass-panel" id="legal-card-3">
+          <div class="legal-card glass-panel-light" id="legal-card-3">
             <div>
               <div class="legal-card-num">03</div>
               <h3>Zwrot Składki OC</h3>
             </div>
-            <p>Nasze zaświadczenie uprawnia do natychmiastowego zgłoszenia ubezpieczycielowi faktu kasacji pojazdu. Umożliwia to rozwiązanie polisy i odzyskanie pieniędzy za niewykorzystany okres składki OC.</p>
+            <p>Zgłoś kasację ubezpieczycielowi, rozwiąż polisę i odbierz zwrot pieniędzy za niewykorzystany okres OC.</p>
           </div>
 
         </div>
@@ -2024,8 +2049,8 @@
         
         <div class="section-header">
           <span class="badge">Prosty Proces</span>
-          <h2>Jak Wygląda Współpraca?</h2>
-          <p>Ograniczyliśmy cały proces do minimum formalności, by sprzedaż lub kasacja auta zajęła jak najmniej czasu.</p>
+          <h2>Jak to Działa?</h2>
+          <p>Trzy proste kroki i gotowe. Szybko, prosto i legalnie.</p>
         </div>
 
         <div class="timeline-container" id="timeline">
@@ -2034,42 +2059,42 @@
           <div class="timeline-step" id="step-1">
             <div class="timeline-num">1</div>
             <h3>Kontakt</h3>
-            <p>Zadzwoń do nas pod numer 795 049 095 lub napisz do nas.</p>
+            <p>Dzwonisz pod numer 795 049 095.</p>
           </div>
 
           <!-- Step 2 -->
           <div class="timeline-step" id="step-2">
             <div class="timeline-num">2</div>
             <h3>Dane Auta</h3>
-            <p>Podaj markę, model, rocznik oraz opisz aktualny stan pojazdu.</p>
+            <p>Podajesz markę, rocznik i stan auta.</p>
           </div>
 
           <!-- Step 3 -->
           <div class="timeline-step" id="step-3">
             <div class="timeline-num">3</div>
-            <h3>Szybka Wycena</h3>
-            <p>Przedstawimy bezpłatną, korzystną ofertę cenową.</p>
+            <h3>Wycena</h3>
+            <p>Robiąc szybką, darmową wycenę.</p>
           </div>
 
           <!-- Step 4 -->
           <div class="timeline-step" id="step-4">
             <div class="timeline-num">4</div>
-            <h3>Akceptacja</h3>
-            <p>Po ustaleniu warunków umawiamy dogodny termin odbioru.</p>
+            <h3>Ustalenie</h3>
+            <p>Ustalamy szczegóły i termin odbioru.</p>
           </div>
 
           <!-- Step 5 -->
           <div class="timeline-step" id="step-5">
             <div class="timeline-num">5</div>
-            <h3>Odbiór Lawetą</h3>
-            <p>Przyjeżdżamy na miejsce i odbieramy auto naszym transportem.</p>
+            <h3>Odbiór</h3>
+            <p>Przyjeżdżamy po auto naszą lawetą.</p>
           </div>
 
           <!-- Step 6 -->
           <div class="timeline-step" id="step-6">
             <div class="timeline-num">6</div>
-            <h3>Gotówka i Dokumenty</h3>
-            <p>Otrzymujesz gotówkę od ręki oraz komplet zaświadczeń.</p>
+            <h3>Gotówka</h3>
+            <p>Dostajesz gotówkę i zaświadczenie do urzędu.</p>
           </div>
 
         </div>
@@ -2083,8 +2108,8 @@
         
         <div class="section-header">
           <span class="badge">Nasze Atuty</span>
-          <h2>Dlaczego Warto Wybrać Nas?</h2>
-          <p>Dzięki wieloletniemu doświadczeniu oferujemy usługi na najwyższym poziomie rynkowym.</p>
+          <h2>Dlaczego My?</h2>
+          <p>Zapewniamy najszybszy proces i najlepsze ceny w regionie.</p>
         </div>
 
         <div class="why-grid" id="why-reasons">
@@ -2095,7 +2120,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             </div>
             <h3>Szybka Obsługa</h3>
-            <p>Szanujemy Twój czas. Transakcję i odbiór auta realizujemy w ekspresowym tempie, często nawet w ten sam dzień.</p>
+            <p>Odbiór auta i gotówka nawet w ten sam dzień.</p>
           </div>
 
           <!-- Card 2 -->
@@ -2104,7 +2129,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
             </div>
             <h3>Uczciwa Wycena</h3>
-            <p>Oferujemy rzetelną wycenę adekwatną do stanu technicznego, wagi pojazdu oraz cen rynkowych.</p>
+            <p>Wyceniamy uczciwie według wagi i cen rynkowych.</p>
           </div>
 
           <!-- Card 3 -->
@@ -2113,7 +2138,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
             </div>
             <h3>Darmowy Odbiór</h3>
-            <p>Posiadamy własne autolawety. Dojeżdżamy po auto pod wskazany adres bez dodatkowych kosztów.</p>
+            <p>Dojazd i transport lawetą zawsze za 0 zł.</p>
           </div>
 
           <!-- Card 4 -->
@@ -2122,7 +2147,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             <h3>Legalna Firma</h3>
-            <p>Działamy na podstawie stosownych zezwoleń. Sprzedając lub złomując auto u nas, masz spokojną głowę.</p>
+            <p>Działamy w 100% legalnie z zezwoleńami.</p>
           </div>
 
           <!-- Card 5 -->
@@ -2130,8 +2155,8 @@
             <div class="why-card-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
             </div>
-            <h3>Pomoc w formalnościach</h3>
-            <p>Krok po kroku wyjaśniamy, jak wyrejestrować pojazd i odzyskać zwrot składki z polisy OC.</p>
+            <h3>Formalności</h3>
+            <p>Pomagamy z wyrejestrowaniem i zwrotem OC.</p>
           </div>
 
           <!-- Card 6 -->
@@ -2139,8 +2164,8 @@
             <div class="why-card-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
             </div>
-            <h3>Każdy stan pojazdu</h3>
-            <p>Skupujemy auta sprawne, powypadkowe, bez przeglądu, zardzewiałe, a także kompletne wraki.</p>
+            <h3>Każdy Stan</h3>
+            <p>Przyjmiemy każdy stan: od wraka po sprawne.</p>
           </div>
 
           <!-- Card 7 -->
@@ -2148,8 +2173,8 @@
             <div class="why-card-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><polygon points="12 22.08 12 12 3 6.92 3 17.08 12 22.08"/><polygon points="12 22.08 21 17.08 21 6.92 12 12 12 22.08"/><polygon points="12 12 21 6.92 12 1.84 3 6.92 12 12"/></svg>
             </div>
-            <h3>Każda marka</h3>
-            <p>Bez względu na to, czy to popularna marka europejska, azjatycka czy amerykańska - kupimy ją.</p>
+            <h3>Każda Marka</h3>
+            <p>Kupujemy auta każdej marki bez wyjątku.</p>
           </div>
 
           <!-- Card 8 -->
@@ -2158,7 +2183,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             </div>
             <h3>Profesjonalizm</h3>
-            <p>Nasz zespół to wykwalifikowani fachowcy o wysokiej kulturze osobistej. Zapewniamy miłą i sprawną współpracę.</p>
+            <p>Doświadczona ekipa, miły kontakt i brak problemów.</p>
           </div>
 
         </div>
@@ -2172,8 +2197,8 @@
         
         <div class="section-header">
           <span class="badge">Lokalny Zasięg</span>
-          <h2>Działamy na Terenie Województwa Opolskiego</h2>
-          <p>Zapewniamy darmowy dojazd i szybki transport pojazdów z dowolnego miejsca w regionie.</p>
+          <h2>Zasięg: Całe Opolskie</h2>
+          <p>Dojazd i odbiór lawetą są darmowe w każdym zakątku województwa.</p>
         </div>
 
         <div class="area-container">
@@ -2193,7 +2218,7 @@
               <div class="area-city-tag"><span class="area-city-tag-dot"></span> Strzelce Opolskie</div>
             </div>
             <p style="margin-top:2rem; font-weight: 500; font-size:1rem;">
-              <strong style="color:var(--color-primary)">Oraz wszystkie pozostałe miejscowości i gminy</strong> na terenie całego województwa opolskiego. Posiadamy bazy mobilne rozlokowane w kluczowych punktach regionu, co gwarantuje dojazd w kilkadziesiąt minut!
+              <strong style="color:var(--color-primary)">Oraz cała reszta województwa opolskiego.</strong> Dojeżdżamy błyskawicznie pod wskazany adres!
             </p>
           </div>
 
@@ -2203,7 +2228,7 @@
     </section>
 
     <!-- SEKCJA 8 – LICZNIKI ZALET -->
-    <section class="counters section-padding tread-pattern-dark" id="stats">
+    <section class="counters section-padding tread-pattern-light" id="stats">
       <div class="container">
         <div class="counters-grid" id="counters-list">
           
@@ -2211,28 +2236,28 @@
           <div class="counter-item" id="counter-1">
             <div class="counter-number">100<span>%</span></div>
             <div class="counter-label">Legalności</div>
-            <p class="counter-desc">Działamy oficjalnie. Otrzymasz pełną dokumentację prawną.</p>
+            <p class="counter-desc">Oficjalne dokumenty i zaświadczenia.</p>
           </div>
 
           <!-- Counter 2 -->
           <div class="counter-item" id="counter-2">
             <div class="counter-number">24<span>/</span>7</div>
             <div class="counter-label">Kontakt</div>
-            <p class="counter-desc">Infolinia telefoniczna czynna non-stop o każdej porze.</p>
+            <p class="counter-desc">Telefony odbieramy o każdej porze.</p>
           </div>
 
           <!-- Counter 3 -->
           <div class="counter-item" id="counter-3">
             <div class="counter-number">0<span> zł</span></div>
             <div class="counter-label">Koszt Odbioru</div>
-            <p class="counter-desc">Dojazd naszej autolawety pod dom klienta jest w 100% darmowy.</p>
+            <p class="counter-desc">Darmowa laweta pod wskazany adres.</p>
           </div>
 
           <!-- Counter 4 -->
           <div class="counter-item" id="counter-4">
             <div class="counter-number">100<span>%</span></div>
             <div class="counter-label">Pomocy</div>
-            <p class="counter-desc">Wsparcie w wyrejestrowaniu i wniosku o zwrot składki OC.</p>
+            <p class="counter-desc">Pomoc w urzędzie i zwrocie ubezpieczenia.</p>
           </div>
 
         </div>
@@ -2248,7 +2273,7 @@
           </div>
           <h3>Odwiedź Nas na Facebooku</h3>
           <p>
-            Bądź na bieżąco z naszymi najnowszymi realizacjami! Zobacz opinie zadowolonych klientów, aktualnie skupowane pojazdy oraz codzienne relacje z terenu całego województwa opolskiego.
+            Zobacz nasze ostatnie realizacje, opinie klientów i codzienny skup pojazdów na żywo na naszym profilu!
           </p>
           <a href="https://www.facebook.com/profile.php?id=61552961669043" class="btn btn-dark" target="_blank" rel="noopener noreferrer" id="btn-fb-link" style="background-color: #1877f2; border-color:#1877f2; box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right:0.25rem;"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
@@ -2262,8 +2287,8 @@
     <section class="big-cta" id="cta-action">
       <div class="container">
         
-        <h2>Chcesz sprzedać auto lub oddać pojazd do kasacji?</h2>
-        <p>Gwarantujemy błyskawiczną wycenę telefoniczną, pełne załatwienie formalności na miejscu oraz darmowy odbiór lawetą.</p>
+        <h2>Chcesz sprzedać lub zezłomować auto?</h2>
+        <p>Zapewniamy darmowy odbiór lawetą, gotówkę do ręki i minimum formalności.</p>
         
         <a href="tel:+48795049095" class="big-cta-number" id="btn-cta-phone">
           <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -2284,7 +2309,7 @@
         <div class="section-header">
           <span class="badge">Szybki Kontakt</span>
           <h2>Skontaktuj Się z Nami</h2>
-          <p>Nasi konsultanci i kierowcy lawet są stale do Twojej dyspozycji. Zadzwoń po darmową wycenę.</p>
+          <p>Zadzwoń do nas – wycenimy i odbierzemy Twoje auto o każdej porze.</p>
         </div>
 
         <div class="contact-grid">
@@ -2326,8 +2351,8 @@
 
           <!-- Maps description and highlights -->
           <div class="contact-map-info" id="contact-info-panel">
-            <h3>Dojazd do Klienta w 24h</h3>
-            <p>Obsługujemy kompleksowo cały region. Nasze autolawety stacjonują w wielu punktach województwa opolskiego, dzięki czemu czas dojazdu i bezpłatnego odbioru auta wynosi zazwyczaj do kilku godzin od kontaktu telefonicznego.</p>
+            <h3>Dojazd w parę godzin</h3>
+            <p>Dojeżdżamy za darmo po auta w całym województwie opolskim. Szybka laweta pod Twój dom zazwyczaj tego samego dnia.</p>
             <div class="contact-badges">
               <div class="contact-badge-item">Opole</div>
               <div class="contact-badge-item">Nysa</div>
@@ -2351,8 +2376,8 @@
         <div class="footer-grid">
           
           <div class="footer-about" id="footer-about">
-            <h3>Skup & Kasacja Opolskie</h3>
-            <p>Jesteśmy legalnie działającą, profesjonalną firmą motoryzacyjną oferującą rzetelny skup aut za gotówkę oraz bezpieczne złomowanie i kasację pojazdów. Działamy na obszarze całego województwa opolskiego.</p>
+            <h3>Złomowanie & Kasacja Opolskie</h3>
+            <p>Legalne złomowanie, kasacja i skup samochodów za gotówkę. Szybki dojazd własną lawetą i zaświadczenie od ręki.</p>
             <p style="font-size:0.85rem; color:rgba(255,255,255,0.4);">Szybki dojazd • Uczciwa wycena • Gotówka do ręki • 100% legalnie</p>
           </div>
 
@@ -2393,7 +2418,7 @@
         </div>
 
         <div class="footer-bottom">
-          <p>© 2026 SKUP AUT I SKUP SAMOCHODÓW ZŁOMOWANIE I KASACJA. Wszystkie prawa zastrzeżone.</p>
+          <p>© 2026 AUTO ZŁOM - ZŁOMOWANIE I KASACJA POJAZDÓW OPOLSKIE. Wszystkie prawa zastrzeżone.</p>
         </div>
 
       </div>
