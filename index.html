@@ -264,6 +264,7 @@
         z-index: 9998;
         transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
         animation: pulse-whatsapp 2s infinite;
+        will-change: transform, box-shadow;
       }
 
       @media (max-width: 767px) {
@@ -1742,6 +1743,7 @@
         border-radius: 50%;
         display: inline-block;
         animation: pulse-glow 2s infinite;
+        will-change: box-shadow;
       }
 
       .area-cities-grid {
@@ -2019,6 +2021,7 @@
         border: 2px solid var(--color-accent);
         max-width: 100%;
         box-sizing: border-box;
+        will-change: box-shadow;
       }
 
       @media (min-width: 480px) {
@@ -2286,10 +2289,12 @@
         gap: 0.75rem;
         box-shadow: 0 4px 12px rgba(var(--color-accent-rgb), 0.3);
         animation: pulse-glow 2s infinite;
+        will-change: box-shadow;
       }
 
       .sticky-cta-btn svg {
         animation: shake 1.5s infinite;
+        will-change: transform;
       }
 
       @keyframes shake {
@@ -2404,6 +2409,7 @@
         box-shadow: 0 0 8px #ff4500, 0 0 12px #ff8c00;
         opacity: 0;
         animation: spark-fly 4s infinite ease-in-out;
+        will-change: transform, opacity;
       }
 
       @keyframes spark-fly {
@@ -2421,6 +2427,7 @@
         color: #bc5a36; /* rust orange */
         opacity: 0.04;
         transition: opacity 0.3s ease;
+        will-change: transform;
       }
 
       .industrial-gear-container:hover {
@@ -2459,6 +2466,7 @@
         opacity: 0.08;
         transform-origin: top center;
         animation: chain-sway 12s ease-in-out infinite;
+        will-change: transform;
       }
 
       @keyframes chain-sway {
