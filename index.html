@@ -88,10 +88,10 @@
     <style>
       :root {
         --color-primary: #121310;
-        --color-secondary: #ffffff;
+        --color-secondary: #fbf9f4;
         --color-accent: #dd2b0e;
         --color-accent-rgb: 221, 43, 14;
-        --color-section-bg: #fce8c3;
+        --color-section-bg: #ebdcb9;
         --color-text: #121310;
         --color-text-muted: #2d2e29;
         --color-border: rgba(18, 19, 16, 0.1);
@@ -534,7 +534,7 @@
           width: 100%;
           max-width: 320px;
           height: calc(100vh - 70px);
-          background-color: rgba(252, 232, 195, 0.98);
+          background-color: rgba(235, 220, 185, 0.98);
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
           flex-direction: column;
@@ -1960,7 +1960,7 @@
 
       /* SEKCJA 10 – DUŻE CTA */
       .big-cta {
-        background: linear-gradient(135deg, var(--color-section-bg) 0%, #ffffff 50%, var(--color-section-bg) 100%);
+        background: linear-gradient(135deg, var(--color-section-bg) 0%, var(--color-secondary) 50%, var(--color-section-bg) 100%);
         color: var(--color-primary);
         position: relative;
         overflow: hidden;
@@ -2366,6 +2366,192 @@
         color: var(--color-text-muted);
         line-height: 1.4;
       }
+
+      /* INDUSTRIAL THEMATIC DECORATIONS */
+      .industrial-hazard-bar {
+        height: 12px;
+        width: 100%;
+        background: repeating-linear-gradient(-45deg, #fbcd05 0px, #fbcd05 15px, #121310 15px, #121310 30px);
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.4), 0 2px 5px rgba(0,0,0,0.2);
+        position: relative;
+        z-index: 10;
+        border-top: 2px solid #2d2e29;
+        border-bottom: 2px solid #2d2e29;
+      }
+
+      .industrial-hazard-bar::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 50%, rgba(0,0,0,0.15) 100%);
+        pointer-events: none;
+      }
+
+      .industrial-spark-container {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 2;
+      }
+
+      .industrial-spark-dot {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: #fbcd05;
+        border-radius: 50%;
+        box-shadow: 0 0 8px #ff4500, 0 0 12px #ff8c00;
+        opacity: 0;
+        animation: spark-fly 4s infinite ease-in-out;
+      }
+
+      @keyframes spark-fly {
+        0% { transform: translateY(10px) translateX(0) scale(0.5); opacity: 0; }
+        20% { opacity: 0.8; }
+        80% { opacity: 0.4; }
+        100% { transform: translateY(-30px) translateX(15px) scale(1.2); opacity: 0; }
+      }
+
+      /* Rotating Gears background watermark */
+      .industrial-gear-container {
+        position: absolute;
+        pointer-events: none;
+        z-index: 0;
+        color: #bc5a36; /* rust orange */
+        opacity: 0.04;
+        transition: opacity 0.3s ease;
+      }
+
+      .industrial-gear-container:hover {
+        opacity: 0.08;
+      }
+
+      @media (max-width: 1024px) {
+        .industrial-gear-container {
+          display: none !important;
+        }
+      }
+
+      .gear-spin-cw {
+        animation: spin-cw 30s linear infinite;
+      }
+
+      .gear-spin-ccw {
+        animation: spin-ccw 40s linear infinite;
+      }
+
+      @keyframes spin-cw {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      @keyframes spin-ccw {
+        0% { transform: rotate(360deg); }
+        100% { transform: rotate(0deg); }
+      }
+
+      /* Hanging Chains */
+      .industrial-chain-container {
+        position: absolute;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.08;
+        transform-origin: top center;
+        animation: chain-sway 12s ease-in-out infinite;
+      }
+
+      @keyframes chain-sway {
+        0%, 100% { transform: rotate(-2deg); }
+        50% { transform: rotate(2deg); }
+      }
+
+      @media (max-width: 1024px) {
+        .industrial-chain-container {
+          display: none !important;
+        }
+      }
+
+      /* Steel Card Rivets */
+      .steel-card {
+        position: relative;
+      }
+
+      .rivets-container {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 5;
+      }
+
+      .rivet {
+        width: 6px;
+        height: 6px;
+        background: radial-gradient(circle at 30% 30%, #fbfbfb 0%, #a5a5a0 50%, #444540 100%);
+        border-radius: 50%;
+        box-shadow: 1px 1px 1.5px rgba(0,0,0,0.65), inset -0.5px -0.5px 1px rgba(0,0,0,0.5);
+        position: absolute;
+      }
+
+      .rivet-tl { top: 8px; left: 8px; }
+      .rivet-tr { top: 8px; right: 8px; }
+      .rivet-bl { bottom: 8px; left: 8px; }
+      .rivet-br { bottom: 8px; right: 8px; }
+
+      @media (max-width: 768px) {
+        .rivet {
+          width: 5px;
+          height: 5px;
+        }
+        .rivet-tl { top: 6px; left: 6px; }
+        .rivet-tr { top: 6px; right: 6px; }
+        .rivet-bl { bottom: 6px; left: 6px; }
+        .rivet-br { bottom: 6px; right: 6px; }
+      }
+
+      /* Welded plate label styling */
+      .welded-plate {
+        border-left: 3px solid #bc5a36 !important;
+        background: linear-gradient(90deg, rgba(188, 90, 54, 0.05) 0%, transparent 100%);
+      }
+
+      /* Custom Rusty metal vignette gradient for section headers and backgrounds */
+      .rust-vignette-left {
+        background-image: radial-gradient(circle at 5% 20%, rgba(188, 90, 54, 0.04) 0%, transparent 45%);
+      }
+      .rust-vignette-right {
+        background-image: radial-gradient(circle at 95% 80%, rgba(188, 90, 54, 0.04) 0%, transparent 45%);
+      }
+
+      /* Custom styling to turn standard .badge into a welded-riveted steel bracket badge */
+      .section-header .badge {
+        display: inline-flex !important;
+        align-items: center;
+        gap: 0.4rem;
+        background: linear-gradient(180deg, #2d2e29 0%, #1c1d19 100%) !important;
+        color: #fbcd05 !important;
+        border: 1px solid #4a4b44 !important;
+        font-family: var(--font-mono) !important;
+        padding: 0.35rem 0.85rem !important;
+        font-size: 0.75rem !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.15em !important;
+        border-radius: 4px !important;
+        box-shadow: inset 0 1px 2px rgba(255,255,255,0.1), 0 3px 8px rgba(0,0,0,0.3) !important;
+        position: relative;
+        overflow: visible;
+      }
+
+      .section-header .badge::before, .section-header .badge::after {
+        content: '';
+        width: 4px;
+        height: 4px;
+        background: radial-gradient(circle at 30% 30%, #fbfbfb, #4a4b44);
+        border-radius: 50%;
+        box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.8);
+        display: inline-block;
+      }
     </style>
   </head>
   <body>
@@ -2426,7 +2612,7 @@
     </header>
 
     <!-- SEKCJA 1 – HERO SECTION -->
-    <section class="hero tread-pattern-light" id="hero-sec">
+    <section class="hero tread-pattern-light rust-vignette-left" id="hero-sec">
       <!-- Geometric tech background overlays -->
       <div class="hero-grid-decor">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -2439,6 +2625,20 @@
           <path d="M -100,200 L 800,900 M 1200,-100 L 400,800" stroke="var(--color-accent)" stroke-width="1.5" stroke-opacity="0.15" />
           <line x1="5%" y1="10%" x2="95%" y2="10%" stroke="var(--color-accent)" stroke-opacity="0.08" stroke-dasharray="5 5" />
           <line x1="15%" y1="80%" x2="85%" y2="80%" stroke="var(--color-accent)" stroke-opacity="0.08" stroke-dasharray="5 5" />
+        </svg>
+      </div>
+
+      <!-- Industrial Rotating Gear Watermarks -->
+      <div class="industrial-gear-container gear-spin-cw" style="top: 10%; left: 3%; width: 140px; height: 140px;">
+        <svg viewBox="0 0 100 100" fill="currentColor" width="100%" height="100%">
+          <path d="M50 35a15 15 0 1 0 0 30 15 15 0 0 0 0-30zm0 10a5 5 0 1 1 0 10 5 5 0 0 1 0-10z" />
+          <path d="M50 5c-1.5 0-2.8 1.1-3 2.6l-.4 3.1c-1.8.4-3.6 1.1-5.2 2.1l-2.4-2.1c-1.1-.9-2.7-.9-3.7.2l-2.8 2.8c-1 1-1 2.6-.1 3.7l2.1 2.4c-1 1.6-1.7 3.4-2.1 5.2l-3.1.4c-1.5.2-2.6 1.5-2.6 3v4c0 1.5 1.1 2.8 2.6 3l3.1.4c.4 1.8 1.1 3.6 2.1 5.2l-2.1 2.4c-.9 1.1-.9 2.7.2 3.7l2.8 2.8c1 1 2.6 1 3.7.1l2.4-2.1c1.6 1 3.4 1.7 5.2 2.1l.4 3.1c.2 1.5 1.5 2.6 3 2.6h4c1.5 0 2.8-1.1 3-2.6l.4-3.1c1.8-.4 3.6-1.1 5.2-2.1l2.4 2.1c1.1.9 2.7.9 3.7-.2l2.8-2.8c1-1 1-2.6.1-3.7l-2.1-2.4c1-1.6 1.7-3.4 2.1-5.2l3.1-.4c1.5-.2 2.6-1.5 2.6-3v-4c0-1.5-1.1-2.8-2.6-3l-3.1-.4c-.4-1.8-1.1-3.6-2.1-5.2l2.1-2.4c.9-1.1.9-2.7-.2-3.7l-2.8-2.8c-1-1-2.6-1-3.7-.1l-2.4 2.1c-1.6-1-3.4-1.7-5.2-2.1l-.4-3.1c-.2-1.5-1.5-2.6-3-2.6h-4z" fill="none" stroke="currentColor" stroke-width="2.5" />
+        </svg>
+      </div>
+      <div class="industrial-gear-container gear-spin-ccw" style="top: 60%; right: 2%; width: 170px; height: 170px;">
+        <svg viewBox="0 0 100 100" fill="currentColor" width="100%" height="100%">
+          <path d="M50 35a15 15 0 1 0 0 30 15 15 0 0 0 0-30zm0 10a5 5 0 1 1 0 10 5 5 0 0 1 0-10z" />
+          <path d="M50 5c-1.5 0-2.8 1.1-3 2.6l-.4 3.1c-1.8.4-3.6 1.1-5.2 2.1l-2.4-2.1c-1.1-.9-2.7-.9-3.7.2l-2.8 2.8c-1 1-1 2.6-.1 3.7l2.1 2.4c-1 1.6-1.7 3.4-2.1 5.2l-3.1.4c-1.5.2-2.6 1.5-2.6 3v4c0 1.5 1.1 2.8 2.6 3l3.1.4c.4 1.8 1.1 3.6 2.1 5.2l-2.1 2.4c-.9 1.1-.9 2.7.2 3.7l2.8 2.8c1 1 2.6 1 3.7.1l2.4-2.1c1.6 1 3.4 1.7 5.2 2.1l.4 3.1c.2 1.5 1.5 2.6 3 2.6h4c1.5 0 2.8-1.1 3-2.6l.4-3.1c1.8-.4 3.6-1.1 5.2-2.1l2.4 2.1c1.1.9 2.7.9 3.7-.2l2.8-2.8c1-1 1-2.6.1-3.7l-2.1-2.4c1-1.6 1.7-3.4 2.1-5.2l3.1-.4c1.5-.2 2.6-1.5 2.6-3v-4c0-1.5-1.1-2.8-2.6-3l-3.1-.4c-.4-1.8-1.1-3.6-2.1-5.2l2.1-2.4c.9-1.1.9-2.7-.2-3.7l-2.8-2.8c-1-1-2.6-1-3.7-.1l-2.4 2.1c-1.6-1-3.4-1.7-5.2-2.1l-.4-3.1c-.2-1.5-1.5-2.6-3-2.6h-4z" fill="none" stroke="currentColor" stroke-width="2.5" />
         </svg>
       </div>
 
@@ -2498,7 +2698,13 @@
         </div>
 
         <!-- Right Column - Premium Glassmorphic Card -->
-        <div class="hero-card glass-panel" id="hero-right">
+        <div class="hero-card glass-panel steel-card" id="hero-right">
+          <div class="rivets-container">
+            <div class="rivet rivet-tl"></div>
+            <div class="rivet rivet-tr"></div>
+            <div class="rivet rivet-bl"></div>
+            <div class="rivet rivet-br"></div>
+          </div>
           <div class="hero-card-header">
             <h3>Legalna Firma Motoryzacyjna</h3>
             <p>KOMPLEKSOWA OBSŁUGA POJAZDÓW</p>
@@ -2561,8 +2767,19 @@
       </div>
     </section>
 
+    <!-- INDUSTRIAL HAZARD DIVIDER -->
+    <div class="industrial-hazard-bar"></div>
+
     <!-- SEKCJA 2 – NASZE USŁUGI -->
-    <section class="services section-padding tread-pattern-light" id="services">
+    <section class="services section-padding tread-pattern-light rust-vignette-right" id="services">
+      <!-- Industrial Rotating Gear Watermark -->
+      <div class="industrial-gear-container gear-spin-ccw" style="bottom: 8%; right: 3%; width: 150px; height: 150px;">
+        <svg viewBox="0 0 100 100" fill="currentColor" width="100%" height="100%">
+          <path d="M50 35a15 15 0 1 0 0 30 15 15 0 0 0 0-30zm0 10a5 5 0 1 1 0 10 5 5 0 0 1 0-10z" />
+          <path d="M50 5c-1.5 0-2.8 1.1-3 2.6l-.4 3.1c-1.8.4-3.6 1.1-5.2 2.1l-2.4-2.1c-1.1-.9-2.7-.9-3.7.2l-2.8 2.8c-1 1-1 2.6-.1 3.7l2.1 2.4c-1 1.6-1.7 3.4-2.1 5.2l-3.1.4c-1.5.2-2.6 1.5-2.6 3v4c0 1.5 1.1 2.8 2.6 3l3.1.4c.4 1.8 1.1 3.6 2.1 5.2l-2.1 2.4c-.9 1.1-.9 2.7.2 3.7l2.8 2.8c1 1 2.6 1 3.7.1l2.4-2.1c1.6 1 3.4 1.7 5.2 2.1l.4 3.1c.2 1.5 1.5 2.6 3 2.6h4c1.5 0 2.8-1.1 3-2.6l.4-3.1c1.8-.4 3.6-1.1 5.2-2.1l2.4 2.1c1.1.9 2.7.9 3.7-.2l2.8-2.8c1-1 1-2.6.1-3.7l-2.1-2.4c1-1.6 1.7-3.4 2.1-5.2l3.1-.4c1.5-.2 2.6-1.5 2.6-3v-4c0-1.5-1.1-2.8-2.6-3l-3.1-.4c-.4-1.8-1.1-3.6-2.1-5.2l2.1-2.4c.9-1.1.9-2.7-.2-3.7l-2.8-2.8c-1-1-2.6-1-3.7-.1l-2.4 2.1c-1.6-1-3.4-1.7-5.2-2.1l-.4-3.1c-.2-1.5-1.5-2.6-3-2.6h-4z" fill="none" stroke="currentColor" stroke-width="2.5" />
+        </svg>
+      </div>
+
       <div class="container">
         
         <div class="section-header">
@@ -2574,7 +2791,13 @@
         <div class="services-grid" id="services-list">
           
           <!-- Card 1 -->
-          <div class="service-card" id="card-zlomowanie">
+          <div class="service-card steel-card" id="card-zlomowanie">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="service-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
             </div>
@@ -2590,7 +2813,13 @@
           </div>
 
           <!-- Card 2 -->
-          <div class="service-card" id="card-transport">
+          <div class="service-card steel-card" id="card-transport">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="service-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
             </div>
@@ -2606,7 +2835,13 @@
           </div>
 
           <!-- Card 3 -->
-          <div class="service-card" id="card-skup-aut">
+          <div class="service-card steel-card" id="card-skup-aut">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="service-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="22" height="13" rx="2" ry="2"/><line x1="12" y1="21" x2="12" y2="16"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
             </div>
@@ -2627,7 +2862,22 @@
     </section>
 
     <!-- SEKCJA 3 – CO SKUPUJEMY -->
-    <section class="what-we-buy section-padding" id="co-skupujemy">
+    <section class="what-we-buy section-padding rust-vignette-left" id="co-skupujemy">
+      <!-- Swaying Chain Decoration -->
+      <div class="industrial-chain-container" style="top: -10px; right: 5%; width: 24px; height: 220px; color: var(--color-primary);">
+        <svg viewBox="0 0 24 220" width="100%" height="100%">
+          <rect x="9" y="0" width="6" height="35" rx="3" fill="none" stroke="currentColor" stroke-width="2" />
+          <rect x="9" y="25" width="6" height="35" rx="3" fill="none" stroke="currentColor" stroke-width="2" transform="rotate(90 12 42.5)" />
+          <rect x="9" y="50" width="6" height="35" rx="3" fill="none" stroke="currentColor" stroke-width="2" />
+          <rect x="9" y="75" width="6" height="35" rx="3" fill="none" stroke="currentColor" stroke-width="2" transform="rotate(90 12 92.5)" />
+          <rect x="9" y="100" width="6" height="35" rx="3" fill="none" stroke="currentColor" stroke-width="2" />
+          <rect x="9" y="125" width="6" height="35" rx="3" fill="none" stroke="currentColor" stroke-width="2" transform="rotate(90 12 142.5)" />
+          <rect x="9" y="150" width="6" height="35" rx="3" fill="none" stroke="currentColor" stroke-width="2" />
+          <rect x="9" y="175" width="6" height="35" rx="3" fill="none" stroke="currentColor" stroke-width="2" transform="rotate(90 12 192.5)" />
+          <rect x="9" y="200" width="6" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2" />
+        </svg>
+      </div>
+
       <div class="container">
         
         <div class="section-header">
@@ -2639,7 +2889,13 @@
         <div class="buy-grid" id="what-we-buy-list">
           
           <!-- Item 1 -->
-          <div class="buy-card" id="buy-osobowe">
+          <div class="buy-card steel-card" id="buy-osobowe">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="buy-card-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
             </div>
@@ -2648,7 +2904,13 @@
           </div>
 
           <!-- Item 2 -->
-          <div class="buy-card" id="buy-dostawcze">
+          <div class="buy-card steel-card" id="buy-dostawcze">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="buy-card-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
             </div>
@@ -2657,7 +2919,13 @@
           </div>
 
           <!-- Item 3 -->
-          <div class="buy-card" id="buy-terenowe">
+          <div class="buy-card steel-card" id="buy-terenowe">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="buy-card-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 16-2-2.73a2 2 0 0 0-3.2 0L14 16H8l-1.8-2.73a2 2 0 0 0-3.2 0L1 16V12c0-.55.45-1 1-1h1c.6 0 1-.4 1-1V5c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v5c0 .6.4 1 1 1h1c.55 0 1 .45 1 1v4Z"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/></svg>
             </div>
@@ -2666,7 +2934,13 @@
           </div>
 
           <!-- Item 4 -->
-          <div class="buy-card" id="buy-uszkodzone">
+          <div class="buy-card steel-card" id="buy-uszkodzone">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="buy-card-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
             </div>
@@ -2675,7 +2949,13 @@
           </div>
 
           <!-- Item 5 -->
-          <div class="buy-card" id="buy-powypadkowe">
+          <div class="buy-card steel-card" id="buy-powypadkowe">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="buy-card-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
             </div>
@@ -2684,7 +2964,13 @@
           </div>
 
           <!-- Item 6 -->
-          <div class="buy-card" id="buy-niesprawne">
+          <div class="buy-card steel-card" id="buy-niesprawne">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="buy-card-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
             </div>
@@ -2693,7 +2979,13 @@
           </div>
 
           <!-- Item 7 -->
-          <div class="buy-card" id="buy-bez-oc">
+          <div class="buy-card steel-card" id="buy-bez-oc">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="buy-card-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
             </div>
@@ -2702,7 +2994,13 @@
           </div>
 
           <!-- Item 8 -->
-          <div class="buy-card" id="buy-bez-przegladu">
+          <div class="buy-card steel-card" id="buy-bez-przegladu">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="buy-card-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
@@ -2715,8 +3013,19 @@
       </div>
     </section>
 
+    <!-- INDUSTRIAL HAZARD DIVIDER -->
+    <div class="industrial-hazard-bar"></div>
+
     <!-- SEKCJA 4 – LEGALNA KASACJA I ZŁOMOWANIE -->
-    <section class="legal-scrap section-padding" id="legal-scrap">
+    <section class="legal-scrap section-padding rust-vignette-right" id="legal-scrap">
+      <!-- Industrial Rotating Gear Watermark -->
+      <div class="industrial-gear-container gear-spin-cw" style="top: 15%; left: 3%; width: 130px; height: 130px;">
+        <svg viewBox="0 0 100 100" fill="currentColor" width="100%" height="100%">
+          <path d="M50 35a15 15 0 1 0 0 30 15 15 0 0 0 0-30zm0 10a5 5 0 1 1 0 10 5 5 0 0 1 0-10z" />
+          <path d="M50 5c-1.5 0-2.8 1.1-3 2.6l-.4 3.1c-1.8.4-3.6 1.1-5.2 2.1l-2.4-2.1c-1.1-.9-2.7-.9-3.7.2l-2.8 2.8c-1 1-1 2.6-.1 3.7l2.1 2.4c-1 1.6-1.7 3.4-2.1 5.2l-3.1.4c-1.5.2-2.6 1.5-2.6 3v4c0 1.5 1.1 2.8 2.6 3l3.1.4c.4 1.8 1.1 3.6 2.1 5.2l-2.1 2.4c-.9 1.1-.9 2.7.2 3.7l2.8 2.8c1 1 2.6 1 3.7.1l2.4-2.1c1.6 1 3.4 1.7 5.2 2.1l.4 3.1c.2 1.5 1.5 2.6 3 2.6h4c1.5 0 2.8-1.1 3-2.6l.4-3.1c1.8-.4 3.6-1.1 5.2-2.1l2.4 2.1c1.1.9 2.7.9 3.7-.2l2.8-2.8c1-1 1-2.6.1-3.7l-2.1-2.4c1-1.6 1.7-3.4 2.1-5.2l3.1-.4c1.5-.2(1.5-2.6) 2.6-3v-4c0-1.5-1.1-2.8-2.6-3l-3.1-.4c-.4-1.8-1.1-3.6-2.1-5.2l2.1-2.4c.9-1.1.9-2.7-.2-3.7l-2.8-2.8c-1-1-2.6-1-3.7-.1l-2.4 2.1c-1.6-1-3.4-1.7-5.2-2.1l-.4-3.1c-.2-1.5-1.5-2.6-3-2.6h-4z" fill="none" stroke="currentColor" stroke-width="2.5" />
+        </svg>
+      </div>
+
       <div class="container">
         
         <div class="section-header">
@@ -2728,7 +3037,13 @@
         <div class="legal-grid" id="legal-steps">
           
           <!-- Card 1 -->
-          <div class="legal-card glass-panel-light" id="legal-card-1">
+          <div class="legal-card glass-panel-light steel-card" id="legal-card-1">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div>
               <div class="legal-card-num">01</div>
               <h3>Urzędowe Zaświadczenie</h3>
@@ -2737,7 +3052,13 @@
           </div>
 
           <!-- Card 2 -->
-          <div class="legal-card glass-panel-light" id="legal-card-2">
+          <div class="legal-card glass-panel-light steel-card" id="legal-card-2">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div>
               <div class="legal-card-num">02</div>
               <h3>Wyrejestrowanie Auta</h3>
@@ -2746,7 +3067,13 @@
           </div>
 
           <!-- Card 3 -->
-          <div class="legal-card glass-panel-light" id="legal-card-3">
+          <div class="legal-card glass-panel-light steel-card" id="legal-card-3">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div>
               <div class="legal-card-num">03</div>
               <h3>Zwrot Składki OC</h3>
@@ -2759,8 +3086,19 @@
       </div>
     </section>
 
+    <!-- INDUSTRIAL HAZARD DIVIDER -->
+    <div class="industrial-hazard-bar"></div>
+
     <!-- SEKCJA 5 – JAK TO DZIAŁA (TIMELINE) -->
-    <section class="how-it-works section-padding" id="how-it-works">
+    <section class="how-it-works section-padding rust-vignette-left" id="how-it-works">
+      <!-- Industrial Rotating Gear Watermark -->
+      <div class="industrial-gear-container gear-spin-ccw" style="bottom: 12%; right: 4%; width: 140px; height: 140px;">
+        <svg viewBox="0 0 100 100" fill="currentColor" width="100%" height="100%">
+          <path d="M50 35a15 15 0 1 0 0 30 15 15 0 0 0 0-30zm0 10a5 5 0 1 1 0 10 5 5 0 0 1 0-10z" />
+          <path d="M50 5c-1.5 0-2.8 1.1-3 2.6l-.4 3.1c-1.8.4-3.6 1.1-5.2 2.1l-2.4-2.1c-1.1-.9-2.7-.9-3.7.2l-2.8 2.8c-1 1-1 2.6-.1 3.7l2.1 2.4c-1 1.6-1.7 3.4-2.1 5.2l-3.1.4c-1.5.2-2.6 1.5-2.6 3v4c0 1.5 1.1 2.8 2.6 3l3.1.4c.4 1.8 1.1 3.6 2.1 5.2l-2.1 2.4c-.9 1.1-.9 2.7.2 3.7l2.8 2.8c1 1 2.6 1 3.7.1l2.4-2.1c1.6 1 3.4 1.7 5.2 2.1l.4 3.1c.2 1.5 1.5 2.6 3 2.6h4c1.5 0 2.8-1.1 3-2.6l.4-3.1c1.8-.4 3.6-1.1 5.2-2.1l2.4 2.1c1.1.9 2.7.9 3.7-.2l2.8-2.8c1-1 1-2.6.1-3.7l-2.1-2.4c1-1.6 1.7-3.4 2.1-5.2l3.1-.4c1.5-.2 2.6-1.5 2.6-3v-4c0-1.5-1.1-2.8-2.6-3l-3.1-.4c-.4-1.8-1.1-3.6-2.1-5.2l2.1-2.4c.9-1.1.9-2.7-.2-3.7l-2.8-2.8c-1-1-2.6-1-3.7-.1l-2.4 2.1c-1.6-1-3.4-1.7-5.2-2.1l-.4-3.1c-.2-1.5-1.5-2.6-3-2.6h-4z" fill="none" stroke="currentColor" stroke-width="2.5" />
+        </svg>
+      </div>
+
       <div class="container">
         
         <div class="section-header">
@@ -2772,42 +3110,78 @@
         <div class="timeline-container" id="timeline">
           
           <!-- Step 1 -->
-          <div class="timeline-step" id="step-1">
+          <div class="timeline-step steel-card" id="step-1">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="timeline-num">1</div>
             <h3>Kontakt</h3>
             <p>Dzwonisz pod numer 795 049 095.</p>
           </div>
 
           <!-- Step 2 -->
-          <div class="timeline-step" id="step-2">
+          <div class="timeline-step steel-card" id="step-2">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="timeline-num">2</div>
             <h3>Dane Auta</h3>
             <p>Podajesz markę, rocznik i stan auta.</p>
           </div>
 
           <!-- Step 3 -->
-          <div class="timeline-step" id="step-3">
+          <div class="timeline-step steel-card" id="step-3">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="timeline-num">3</div>
             <h3>Wycena</h3>
             <p>Robiąc szybką, darmową wycenę.</p>
           </div>
 
           <!-- Step 4 -->
-          <div class="timeline-step" id="step-4">
+          <div class="timeline-step steel-card" id="step-4">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="timeline-num">4</div>
             <h3>Ustalenie</h3>
             <p>Ustalamy szczegóły i termin odbioru.</p>
           </div>
 
           <!-- Step 5 -->
-          <div class="timeline-step" id="step-5">
+          <div class="timeline-step steel-card" id="step-5">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="timeline-num">5</div>
             <h3>Odbiór</h3>
             <p>Przyjeżdżamy po auto naszą lawetą.</p>
           </div>
 
           <!-- Step 6 -->
-          <div class="timeline-step" id="step-6">
+          <div class="timeline-step steel-card" id="step-6">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="timeline-num">6</div>
             <h3>Gotówka</h3>
             <p>Dostajesz gotówkę i zaświadczenie do urzędu.</p>
@@ -2818,8 +3192,21 @@
       </div>
     </section>
 
+    </section>
+
+    <!-- INDUSTRIAL HAZARD DIVIDER -->
+    <div class="industrial-hazard-bar"></div>
+
     <!-- SEKCJA 6 – DLACZEGO WARTO -->
-    <section class="why-choose-us section-padding" id="why-choose-us">
+    <section class="why-choose-us section-padding rust-vignette-right" id="why-choose-us">
+      <!-- Industrial Rotating Gear Watermark -->
+      <div class="industrial-gear-container gear-spin-cw" style="top: 8%; left: 3%; width: 150px; height: 150px;">
+        <svg viewBox="0 0 100 100" fill="currentColor" width="100%" height="100%">
+          <path d="M50 35a15 15 0 1 0 0 30 15 15 0 0 0 0-30zm0 10a5 5 0 1 1 0 10 5 5 0 0 1 0-10z" />
+          <path d="M50 5c-1.5 0-2.8 1.1-3 2.6l-.4 3.1c-1.8.4-3.6 1.1-5.2 2.1l-2.4-2.1c-1.1-.9-2.7-.9-3.7.2l-2.8 2.8c-1 1-1 2.6-.1 3.7l2.1 2.4c-1 1.6-1.7 3.4-2.1 5.2l-3.1.4c-1.5.2-2.6 1.5-2.6 3v4c0 1.5 1.1 2.8 2.6 3l3.1.4c.4 1.8 1.1 3.6 2.1 5.2l-2.1 2.4c-.9 1.1-.9 2.7.2 3.7l2.8 2.8c1 1 2.6 1 3.7.1l2.4-2.1c1.6 1 3.4 1.7 5.2 2.1l.4 3.1c.2 1.5 1.5 2.6 3 2.6h4c1.5 0 2.8-1.1 3-2.6l.4-3.1c1.8-.4 3.6-1.1 5.2-2.1l2.4 2.1c1.1.9 2.7.9 3.7-.2l2.8-2.8c1-1 1-2.6.1-3.7l-2.1-2.4c1-1.6 1.7-3.4 2.1-5.2l3.1-.4c1.5-.2 2.6-1.5 2.6-3v-4c0-1.5-1.1-2.8-2.6-3l-3.1-.4c-.4-1.8-1.1-3.6-2.1-5.2l2.1-2.4c.9-1.1.9-2.7-.2-3.7l-2.8-2.8c-1-1-2.6-1-3.7-.1l-2.4 2.1c-1.6-1-3.4-1.7-5.2-2.1l-.4-3.1c-.2-1.5-1.5-2.6-3-2.6h-4z" fill="none" stroke="currentColor" stroke-width="2.5" />
+        </svg>
+      </div>
+
       <div class="container">
         
         <div class="section-header">
@@ -2831,7 +3218,13 @@
         <div class="why-grid" id="why-reasons">
           
           <!-- Card 1 -->
-          <div class="why-card" id="why-1">
+          <div class="why-card steel-card" id="why-1">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="why-card-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             </div>
@@ -2840,7 +3233,13 @@
           </div>
 
           <!-- Card 2 -->
-          <div class="why-card" id="why-2">
+          <div class="why-card steel-card" id="why-2">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="why-card-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
             </div>
@@ -2849,7 +3248,13 @@
           </div>
 
           <!-- Card 3 -->
-          <div class="why-card" id="why-3">
+          <div class="why-card steel-card" id="why-3">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="why-card-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
             </div>
@@ -2858,7 +3263,13 @@
           </div>
 
           <!-- Card 4 -->
-          <div class="why-card" id="why-4">
+          <div class="why-card steel-card" id="why-4">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="why-card-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
@@ -2867,7 +3278,13 @@
           </div>
 
           <!-- Card 5 -->
-          <div class="why-card" id="why-5">
+          <div class="why-card steel-card" id="why-5">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="why-card-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
             </div>
@@ -2876,7 +3293,13 @@
           </div>
 
           <!-- Card 6 -->
-          <div class="why-card" id="why-6">
+          <div class="why-card steel-card" id="why-6">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="why-card-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
             </div>
@@ -2885,7 +3308,13 @@
           </div>
 
           <!-- Card 7 -->
-          <div class="why-card" id="why-7">
+          <div class="why-card steel-card" id="why-7">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="why-card-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><polygon points="12 22.08 12 12 3 6.92 3 17.08 12 22.08"/><polygon points="12 22.08 21 17.08 21 6.92 12 12 12 22.08"/><polygon points="12 12 21 6.92 12 1.84 3 6.92 12 12"/></svg>
             </div>
@@ -2894,7 +3323,13 @@
           </div>
 
           <!-- Card 8 -->
-          <div class="why-card" id="why-8">
+          <div class="why-card steel-card" id="why-8">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <div class="why-card-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             </div>
@@ -3024,6 +3459,9 @@
       </div>
     </section>
 
+    <!-- INDUSTRIAL HAZARD DIVIDER -->
+    <div class="industrial-hazard-bar"></div>
+
     <!-- SEKCJA 10 – DUŻE CTA SECTION -->
     <section class="big-cta" id="cta-action">
       <div class="container">
@@ -3043,8 +3481,11 @@
       </div>
     </section>
 
+    <!-- INDUSTRIAL HAZARD DIVIDER -->
+    <div class="industrial-hazard-bar"></div>
+
     <!-- SEKCJA 11 – KONTAKT -->
-    <section class="contact-section section-padding" id="contact">
+    <section class="contact-section section-padding rust-vignette-left" id="contact">
       <div class="container">
         
         <div class="section-header">
@@ -3058,7 +3499,13 @@
           <!-- Contact Detail Block -->
           <div class="contact-info-block" id="contact-details">
             
-            <div class="contact-detail-card" id="contact-phone-card">
+            <div class="contact-detail-card steel-card" id="contact-phone-card">
+              <div class="rivets-container">
+                <div class="rivet rivet-tl"></div>
+                <div class="rivet rivet-tr"></div>
+                <div class="rivet rivet-bl"></div>
+                <div class="rivet rivet-br"></div>
+              </div>
               <div class="contact-icon-box">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               </div>
@@ -3068,7 +3515,13 @@
               </div>
             </div>
 
-            <div class="contact-detail-card" id="contact-whatsapp-card">
+            <div class="contact-detail-card steel-card" id="contact-whatsapp-card">
+              <div class="rivets-container">
+                <div class="rivet rivet-tl"></div>
+                <div class="rivet rivet-tr"></div>
+                <div class="rivet rivet-bl"></div>
+                <div class="rivet rivet-br"></div>
+              </div>
               <div class="contact-icon-box" style="background-color: #25d366;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.454 5.709 1.455h.008c6.56 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg>
               </div>
@@ -3078,7 +3531,13 @@
               </div>
             </div>
 
-            <div class="contact-detail-card" id="contact-fb-card">
+            <div class="contact-detail-card steel-card" id="contact-fb-card">
+              <div class="rivets-container">
+                <div class="rivet rivet-tl"></div>
+                <div class="rivet rivet-tr"></div>
+                <div class="rivet rivet-bl"></div>
+                <div class="rivet rivet-br"></div>
+              </div>
               <div class="contact-icon-box" style="background-color: #1877f2;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
               </div>
@@ -3088,7 +3547,13 @@
               </div>
             </div>
 
-            <div class="contact-detail-card" id="contact-area-card">
+            <div class="contact-detail-card steel-card" id="contact-area-card">
+              <div class="rivets-container">
+                <div class="rivet rivet-tl"></div>
+                <div class="rivet rivet-tr"></div>
+                <div class="rivet rivet-bl"></div>
+                <div class="rivet rivet-br"></div>
+              </div>
               <div class="contact-icon-box">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               </div>
@@ -3101,7 +3566,13 @@
           </div>
 
           <!-- Maps description and highlights -->
-          <div class="contact-map-info" id="contact-info-panel">
+          <div class="contact-map-info steel-card" id="contact-info-panel">
+            <div class="rivets-container">
+              <div class="rivet rivet-tl"></div>
+              <div class="rivet rivet-tr"></div>
+              <div class="rivet rivet-bl"></div>
+              <div class="rivet rivet-br"></div>
+            </div>
             <h3>Dojazd w parę godzin</h3>
             <p>Dojeżdżamy za darmo po auta w całym województwie opolskim. Szybka laweta pod Twój dom zazwyczaj tego samego dnia.</p>
             <div class="contact-badges">
