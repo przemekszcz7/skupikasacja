@@ -685,33 +685,21 @@
         max-width: 600px;
       }
 
-      .hero-benefits {
-        list-style: none;
+      .hero-benefits-text {
         margin-bottom: 2.5rem;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-      }
-
-      @media (min-width: 768px) {
-        .hero-benefits {
-          grid-template-columns: 1fr 1fr;
-          gap: 1rem;
-        }
-      }
-
-      .hero-benefits li {
+        max-width: 600px;
         display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        font-size: 0.95rem;
-        font-weight: 500;
-        color: var(--color-text);
+        flex-direction: column;
+        gap: 1.25rem;
       }
 
-      .hero-benefits svg {
-        stroke: var(--color-accent);
-        flex-shrink: 0;
+      .hero-benefits-text p {
+        font-size: 1.05rem;
+        line-height: 1.5;
+        color: var(--color-text-muted);
+        font-weight: 500;
+        border-left: 3px solid var(--color-accent);
+        padding-left: 1rem;
       }
 
       .hero-ctas {
@@ -2322,6 +2310,12 @@
         }
       }
 
+      @media (min-width: 1024px) {
+        .realizations-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
       .realization-card {
         border-radius: 16px;
         overflow: hidden;
@@ -2582,10 +2576,10 @@
         
         <!-- Logo -->
         <a href="#" class="logo" id="logo-main">
-          <img src="https://i.ibb.co/GQHfc3QX/660521663-122240339084098722-5636126667943401032-n-1-Photoroom.png" alt="Złomowanie & Kasacja Logo" class="logo-img" referrerPolicy="no-referrer" />
+          <img src="https://i.ibb.co/GQHfc3QX/660521663-122240339084098722-5636126667943401032-n-1-Photoroom.png" alt="Złomowanie - Kasacja Logo" class="logo-img" referrerPolicy="no-referrer" />
           <div class="logo-text">
-            Złomowanie & Kasacja
-            <span>Skup Aut • Woj. Opolskie</span>
+            ZŁOMOWANIE - KASACJA
+            <span>& SKUP AUT WOJ. OPOLSKIE</span>
           </div>
         </a>
 
@@ -2665,35 +2659,17 @@
           </div>
           
           <h1 id="hero-title">
-            Złomowanie i Kasacja <span>Pojazdów</span> & Skup Aut
+            Złomowanie - Kasacja <span>Pojazdów</span> & Skup Aut
           </h1>
           
           <p class="hero-subtext" id="hero-subtitle">
-            Złomujemy i skupujemy auta za gotówkę na terenie całego województwa opolskiego. Zapewniamy darmowy transport lawetą oraz komplet dokumentów do urzędu.
+            Zajmujemy się legalnym złomowaniem pojazdów oraz skupem samochodów na terenie całego województwa Opolskiego.
           </p>
           
-          <ul class="hero-benefits" id="benefits-list">
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Bezpłatna wycena w minutę
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Zaświadczenie do wyrejestrowania auta
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Dokumenty do urzędu i zwrotu OC
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Darmowy odbiór naszą lawetą
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Dojazd w całym woj. opolskim
-            </li>
-          </ul>
+          <div class="hero-benefits-text" id="benefits-list">
+            <p>Zapewniamy darmową wycenę oraz bezpłatny odbiór pojazdu naszym transportem bezpośrednio spod adresu.</p>
+            <p>Wystawiamy legalne zaświadczenie o demontażu pojazdu potrzebne do wyrejestrowania oraz zwrotu składki OC.</p>
+          </div>
           
           <div class="hero-ctas">
             <a href="tel:+48795049095" class="btn btn-accent" id="btn-hero-call">
@@ -2774,8 +2750,8 @@
             </p>
             <ul class="service-bullets">
               <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Kupujemy wyłącznie auta sprawne</li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Uczciwe, najwyższe stawki rynkowe</li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Błyskawiczna wycena i gotówka</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Szybka wycena przez telefon</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Formalności i płatność gotówką na miejscu</li>
             </ul>
           </div>
 
@@ -3124,7 +3100,7 @@
         <div class="section-header">
           <span class="badge">Nasze Atuty</span>
           <h2>Dlaczego My?</h2>
-          <p>Zapewniamy najszybszy proces i najlepsze ceny w regionie.</p>
+          <p>Gwarantujemy w pełni bezpieczne i profesjonalne złomowanie pojazdów.</p>
         </div>
 
         <div class="why-grid" id="why-reasons">
@@ -3153,10 +3129,13 @@
               <div class="rivet rivet-br"></div>
             </div>
             <div class="why-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="7" />
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+              </svg>
             </div>
-            <h3>Najlepsze Stawki</h3>
-            <p>Gwarantujemy uczciwe i najwyższe wyceny w województwie opolskim, płatne gotówką.</p>
+            <h3>Profesjonalna obsługa</h3>
+            <p>Dzięki wieloletniemu doświadczeniu w branży motoryzacyjnej obsługujemy klientów na najwyższym poziomie.</p>
           </div>
 
           <!-- Card 3 -->
@@ -3206,13 +3185,37 @@
         <div class="realizations-grid">
           <div class="realization-card glass-panel-light">
             <div class="realization-img-wrapper">
-              <img src="https://i.ibb.co/DfLsHbv4/574611098-122222953064098722-4072586043484708611-n.jpg" alt="Złomowanie i Kasacja Opolskie - Nasza Flota" loading="lazy" referrerPolicy="no-referrer" />
+              <img src="https://i.ibb.co/DfLsHbv4/574611098-122222953064098722-4072586043484708611-n.jpg" alt="Złomowanie - Kasacja Opolskie - Nasza Flota" loading="lazy" referrerPolicy="no-referrer" />
             </div>
           </div>
 
           <div class="realization-card glass-panel-light">
             <div class="realization-img-wrapper">
-              <img src="https://i.ibb.co/jkZFJS3K/738158140-1020228407416152-6114695515855077197-n.jpg" alt="Złomowanie i Kasacja Opolskie - Nasza Flota" loading="lazy" referrerPolicy="no-referrer" />
+              <img src="https://i.ibb.co/jkZFJS3K/738158140-1020228407416152-6114695515855077197-n.jpg" alt="Złomowanie - Kasacja Opolskie - Nasza Flota" loading="lazy" referrerPolicy="no-referrer" />
+            </div>
+          </div>
+
+          <div class="realization-card glass-panel-light">
+            <div class="realization-img-wrapper">
+              <img src="https://i.ibb.co/5WnBMk6D/Whats-App-Image-2026-07-18-at-22-17-16.jpg" alt="Złomowanie - Kasacja Opolskie - Nasza Flota" loading="lazy" referrerPolicy="no-referrer" />
+            </div>
+          </div>
+
+          <div class="realization-card glass-panel-light">
+            <div class="realization-img-wrapper">
+              <img src="https://i.ibb.co/fGZ7PQLh/Whats-App-Image-2026-07-18-at-22-16-38.jpg" alt="Złomowanie - Kasacja Opolskie - Nasza Flota" loading="lazy" referrerPolicy="no-referrer" />
+            </div>
+          </div>
+
+          <div class="realization-card glass-panel-light">
+            <div class="realization-img-wrapper">
+              <img src="https://i.ibb.co/MkbwXMXZ/Whats-App-Image-2026-07-18-at-22-16-21-1.jpg" alt="Złomowanie - Kasacja Opolskie - Nasza Flota" loading="lazy" referrerPolicy="no-referrer" />
+            </div>
+          </div>
+
+          <div class="realization-card glass-panel-light">
+            <div class="realization-img-wrapper">
+              <img src="https://i.ibb.co/jPKq7S0G/Whats-App-Image-2026-07-18-at-22-16-21.jpg" alt="Złomowanie - Kasacja Opolskie - Nasza Flota" loading="lazy" referrerPolicy="no-referrer" />
             </div>
           </div>
         </div>
@@ -3428,9 +3431,8 @@
         <div class="footer-grid">
           
           <div class="footer-about" id="footer-about">
-            <h3>Złomowanie & Kasacja Opolskie</h3>
+            <h3>Złomowanie - Kasacja Opolskie</h3>
             <p>Legalne złomowanie, kasacja i skup samochodów za gotówkę. Szybki dojazd własną lawetą i zaświadczenie do wyrejestrowania auta.</p>
-            <p style="font-size:0.85rem; color:rgba(255,255,255,0.4);">Szybki dojazd • Uczciwa wycena • Gotówka do ręki • 100% legalnie</p>
           </div>
 
           <div class="footer-links" id="footer-nav-links">
@@ -3471,7 +3473,7 @@
         </div>
 
         <div class="footer-bottom">
-          <p>© 2026 AUTO ZŁOM - ZŁOMOWANIE I KASACJA POJAZDÓW OPOLSKIE. Wszystkie prawa zastrzeżone.</p>
+          <p>© 2026 AUTO ZŁOM - ZŁOMOWANIE - KASACJA POJAZDÓW OPOLSKIE. Wszystkie prawa zastrzeżone.</p>
         </div>
 
       </div>
