@@ -262,9 +262,20 @@
         justify-content: center;
         box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
         z-index: 9998;
-        transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-        animation: pulse-whatsapp 2s infinite;
-        will-change: transform, box-shadow;
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+        will-change: transform;
+      }
+
+      .whatsapp-float::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background-color: #25d366;
+        pointer-events: none;
+        z-index: -1;
+        animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        will-change: transform, opacity;
       }
 
       @media (max-width: 767px) {
@@ -282,45 +293,28 @@
         box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
       }
 
-      @keyframes pulse-whatsapp {
+      /* High Performance GPU-composited Pulse Ring */
+      @keyframes pulse-ring {
         0% {
-          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+          transform: scale(0.96);
+          opacity: 0.85;
         }
-        70% {
-          box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        80%, 100% {
+          transform: scale(1.3);
+          opacity: 0;
         }
       }
 
-      /* Animated glowing accents */
-      @keyframes pulse-glow {
-        0% {
-          box-shadow: 0 0 0 0 rgba(var(--color-accent-rgb), 0.4);
-        }
-        70% {
-          box-shadow: 0 0 0 15px rgba(var(--color-accent-rgb), 0);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(var(--color-accent-rgb), 0);
-        }
-      }
-
-      /* Glassmorphism elements */
+      /* Glassmorphism elements optimized for performance */
       .glass-panel {
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        background: rgba(30, 31, 28, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
       }
 
       .glass-panel-light {
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(255, 255, 255, 0.5);
+        background: #ffffff;
+        border: 1px solid var(--color-border);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
       }
 
@@ -724,9 +718,7 @@
         border-radius: 16px;
         position: relative;
         overflow: hidden;
-        background: rgba(255, 255, 255, 0.65);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
+        background: #ffffff;
         border: 1px solid rgba(18, 19, 16, 0.08);
         box-shadow: var(--shadow-md);
       }
@@ -1732,8 +1724,18 @@
         background-color: #22c55e;
         border-radius: 50%;
         display: inline-block;
-        animation: pulse-glow 2s infinite;
-        will-change: box-shadow;
+        position: relative;
+      }
+
+      .area-map-title span::after {
+        content: '';
+        position: absolute;
+        inset: -3px;
+        border-radius: 50%;
+        background-color: #22c55e;
+        pointer-events: none;
+        animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        will-change: transform, opacity;
       }
 
       .area-cities-grid {
@@ -2004,14 +2006,26 @@
         gap: 0.5rem;
         letter-spacing: -0.02em;
         transition: var(--transition-base);
-        animation: pulse-glow 2.5s infinite;
         padding: 0.5rem 1rem;
         border-radius: 12px;
         background: rgba(var(--color-accent-rgb), 0.15);
         border: 2px solid var(--color-accent);
         max-width: 100%;
         box-sizing: border-box;
-        will-change: box-shadow;
+        position: relative;
+        overflow: visible;
+      }
+
+      .big-cta-number::after {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        border-radius: 12px;
+        border: 2px solid var(--color-accent);
+        pointer-events: none;
+        z-index: 1;
+        animation: pulse-ring 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        will-change: transform, opacity;
       }
 
       @media (min-width: 480px) {
@@ -2280,8 +2294,20 @@
         justify-content: center;
         gap: 0.75rem;
         box-shadow: 0 4px 12px rgba(var(--color-accent-rgb), 0.3);
-        animation: pulse-glow 2s infinite;
-        will-change: box-shadow;
+        position: relative;
+        overflow: visible;
+      }
+
+      .sticky-cta-btn::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 8px;
+        background-color: var(--color-accent);
+        pointer-events: none;
+        z-index: -1;
+        animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        will-change: transform, opacity;
       }
 
       .sticky-cta-btn svg {
@@ -2323,8 +2349,8 @@
         transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
         display: flex;
         flex-direction: column;
-        background: rgba(255, 255, 255, 0.6);
-        backdrop-filter: blur(8px);
+        background: #ffffff;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
       }
 
       .realization-card:hover {
@@ -2440,20 +2466,26 @@
 
       .gear-spin-cw {
         animation: spin-cw 30s linear infinite;
+        will-change: transform;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
       }
 
       .gear-spin-ccw {
         animation: spin-ccw 40s linear infinite;
+        will-change: transform;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
       }
 
       @keyframes spin-cw {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+        0% { transform: translate3d(0, 0, 0) rotate(0deg); }
+        100% { transform: translate3d(0, 0, 0) rotate(360deg); }
       }
 
       @keyframes spin-ccw {
-        0% { transform: rotate(360deg); }
-        100% { transform: rotate(0deg); }
+        0% { transform: translate3d(0, 0, 0) rotate(360deg); }
+        100% { transform: translate3d(0, 0, 0) rotate(0deg); }
       }
 
       /* Hanging Chains */
@@ -2465,11 +2497,13 @@
         transform-origin: top center;
         animation: chain-sway 12s ease-in-out infinite;
         will-change: transform;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
       }
 
       @keyframes chain-sway {
-        0%, 100% { transform: rotate(-2deg); }
-        50% { transform: rotate(2deg); }
+        0%, 100% { transform: translate3d(0, 0, 0) rotate(-2deg); }
+        50% { transform: translate3d(0, 0, 0) rotate(2deg); }
       }
 
       @media (max-width: 1024px) {
@@ -2706,7 +2740,6 @@
         <div class="section-header">
           <span class="badge">Poznaj Nasze Usługi</span>
           <h2>Nasze Usługi</h2>
-          <p>Legalna kasacja, szybka wycena i gotówka od ręki.</p>
         </div>
 
         <div class="services-grid" id="services-list">
@@ -3179,7 +3212,6 @@
         <div class="section-header">
           <span class="badge" style="color: var(--color-accent)">Galeria</span>
           <h2>Nasza Flota i Realizacje</h2>
-          <p>Zobacz nasze lawety i przykładowe realizacje w terenie. Działamy szybko, profesjonalnie i w pełni legalnie.</p>
         </div>
 
         <div class="realizations-grid">
