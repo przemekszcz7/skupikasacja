@@ -29,7 +29,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -87,21 +87,21 @@
     <!-- Style block containing elegant CSS3 variables and properties -->
     <style>
       :root {
-        --color-primary: #121310;
-        --color-secondary: #fbf9f4;
-        --color-accent: #be3521;
-        --color-accent-rgb: 190, 53, 33;
-        --color-section-bg: #dfdacb;
-        --color-text: #121310;
-        --color-text-muted: #2d2e29;
-        --color-border: rgba(18, 19, 16, 0.1);
+        --color-primary: #010103;
+        --color-secondary: #faf3e1;
+        --color-accent: #530409;
+        --color-accent-rgb: 83, 4, 9;
+        --color-section-bg: #faf3e1;
+        --color-text: #010103;
+        --color-text-muted: #332d2b;
+        --color-border: rgba(1, 1, 3, 0.12);
         --color-yellow: #dbaf08;
         --color-gold: #c99307;
         --font-sans: 'Outfit', sans-serif;
         --font-mono: 'JetBrains Mono', monospace;
-        --shadow-sm: 0 2px 8px rgba(18, 19, 16, 0.05);
-        --shadow-md: 0 10px 25px -5px rgba(18, 19, 16, 0.08), 0 8px 16px -6px rgba(18, 19, 16, 0.05);
-        --shadow-lg: 0 20px 40px -10px rgba(18, 19, 16, 0.12);
+        --shadow-sm: 0 2px 8px rgba(1, 1, 3, 0.05);
+        --shadow-md: 0 10px 25px -5px rgba(1, 1, 3, 0.08), 0 8px 16px -6px rgba(1, 1, 3, 0.05);
+        --shadow-lg: 0 20px 40px -10px rgba(1, 1, 3, 0.12);
         --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
@@ -265,7 +265,7 @@
       }
 
       .btn-accent:hover {
-        background-color: #cf3c27;
+        background-color: #6e060c;
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(var(--color-accent-rgb), 0.5);
       }
@@ -289,30 +289,30 @@
       }
 
       .btn-dark:hover {
-        background-color: #22241e;
+        background-color: #1b1c22;
         transform: translateY(-2px);
         box-shadow: var(--shadow-md);
       }
 
       /* WhatsApp buttons & floating styles */
       .btn-whatsapp {
-        background-color: #25d366 !important;
+        background-color: #2d5f25 !important;
         color: #ffffff !important;
         border: none !important;
-        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3) !important;
+        box-shadow: 0 4px 15px rgba(45, 95, 37, 0.3) !important;
       }
 
       .btn-whatsapp:hover {
-        background-color: #128c7e !important;
+        background-color: #20451a !important;
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4) !important;
+        box-shadow: 0 6px 20px rgba(45, 95, 37, 0.4) !important;
       }
 
       .whatsapp-float {
         position: fixed;
         bottom: 24px;
         right: 24px;
-        background-color: #25d366;
+        background-color: #2d5f25;
         color: white;
         width: 56px;
         height: 56px;
@@ -320,7 +320,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        box-shadow: 0 4px 15px rgba(45, 95, 37, 0.4);
         z-index: 9998;
         transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
         will-change: transform;
@@ -331,7 +331,7 @@
         position: absolute;
         inset: 0;
         border-radius: 50%;
-        background-color: #25d366;
+        background-color: #2d5f25;
         pointer-events: none;
         z-index: -1;
         animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
@@ -348,9 +348,9 @@
       }
 
       .whatsapp-float:hover {
-        background-color: #128c7e;
+        background-color: #20451a;
         transform: scale(1.1);
-        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        box-shadow: 0 6px 20px rgba(45, 95, 37, 0.6);
       }
 
       /* High Performance GPU-composited Pulse Ring */
@@ -719,23 +719,36 @@
         margin-bottom: 1.5rem;
       }
 
-      .hero h1 {
+      .hero h1,
+      #hero-title {
         font-size: 2.5rem;
         line-height: 1.1;
         margin-bottom: 1.5rem;
-        color: var(--color-primary);
+        font-weight: 900;
         text-transform: uppercase;
+        background: linear-gradient(120deg, #121310 0%, #290e11 25%, #530409 55%, #7a0b13 80%, #99121c 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: -0.02em;
+        filter: drop-shadow(0px 4px 20px rgba(83, 4, 9, 0.18));
       }
 
       @media (min-width: 768px) {
-        .hero h1 {
+        .hero h1,
+        #hero-title {
           font-size: 3.75rem;
         }
       }
 
-      .hero h1 span {
-        color: var(--color-accent);
+      .hero h1 span,
+      #hero-title span {
         display: block;
+        background: linear-gradient(120deg, #530409 0%, #800c14 30%, #a8131d 55%, #c97d10 85%, #e3b034 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        filter: drop-shadow(0px 2px 14px rgba(201, 169, 97, 0.25));
       }
 
       .hero-subtext {
@@ -811,8 +824,8 @@
         width: 8px;
         height: 8px;
         border-radius: 50%;
-        background-color: #22c55e;
-        box-shadow: 0 0 8px #22c55e;
+        background-color: #2d5f25;
+        box-shadow: 0 0 8px #2d5f25;
         animation: soft-pulse 2s infinite ease-in-out;
       }
 
@@ -844,10 +857,12 @@
 
       .hero-card-item {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        gap: 1.25rem;
-        border-bottom: 1px solid rgba(18, 19, 16, 0.05);
-        padding-bottom: 1rem;
+        text-align: center;
+        gap: 0.35rem;
+        border-bottom: 1px dashed rgba(83, 4, 9, 0.15);
+        padding-bottom: 0.85rem;
       }
 
       .hero-card-item:last-child {
@@ -856,15 +871,23 @@
       }
 
       .hero-card-item-icon {
-        width: 44px;
-        height: 44px;
-        background-color: rgba(var(--color-accent-rgb), 0.05);
-        border: 1px solid rgba(var(--color-accent-rgb), 0.15);
-        border-radius: 8px;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.25rem;
+        color: var(--color-accent);
+      }
+
+      .hero-card-item-icon svg {
+        width: 28px;
+        height: 28px;
+        stroke: var(--color-accent);
+        stroke-width: 1.75;
+        fill: none;
       }
 
       .hero-card-item-text h4 {
@@ -948,57 +971,105 @@
         background-color: var(--color-accent);
       }
 
+      .service-img-wrapper {
+        width: calc(100% + 0.8rem);
+        margin: -0.6rem -0.4rem 0.85rem -0.4rem;
+        height: 150px;
+        border-radius: 0;
+        overflow: hidden;
+        border-bottom: 1px solid var(--color-border);
+        position: relative;
+        background-color: #eaeaea;
+        flex-shrink: 0;
+      }
+
+      @media (min-width: 768px) {
+        .service-img-wrapper {
+          width: calc(100% + 3.5rem);
+          margin: -1.75rem -1.75rem 1.25rem -1.75rem;
+          height: 190px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .service-img-wrapper {
+          width: calc(100% + 5rem);
+          margin: -2.5rem -2.5rem 1.5rem -2.5rem;
+          height: 220px;
+        }
+      }
+
+      .service-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .service-card:hover .service-img-wrapper img {
+        transform: scale(1.05);
+      }
+
       .service-icon {
-        width: 28px;
-        height: 28px;
-        background-color: rgba(var(--color-accent-rgb), 0.05);
-        border: 1px dashed rgba(var(--color-accent-rgb), 0.3);
-        border-radius: 6px;
+        width: 52px;
+        height: 52px;
+        background-color: #F3ECDD;
+        border: 2px solid var(--color-accent);
+        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 0.4rem;
+        margin: 0 auto 0.6rem auto;
         color: var(--color-accent);
         transition: var(--transition-base);
+        box-shadow: 0 2px 8px rgba(83, 4, 9, 0.08);
       }
 
       .service-icon svg {
-        width: 14px;
-        height: 14px;
+        width: 30px;
+        height: 30px;
+        stroke: var(--color-accent);
+        stroke-width: 2.25;
+        fill: none;
         flex-shrink: 0;
       }
 
       @media (min-width: 768px) {
         .service-icon {
-          width: 56px;
-          height: 56px;
-          border-radius: 10px;
-          margin-bottom: 1.5rem;
+          width: 66px;
+          height: 66px;
+          margin: 0 auto 1.25rem auto;
         }
         .service-icon svg {
-          width: 24px;
-          height: 24px;
+          width: 38px;
+          height: 38px;
+          stroke-width: 2.25;
         }
       }
 
       @media (min-width: 1024px) {
         .service-icon {
-          width: 64px;
-          height: 64px;
-          border-radius: 12px;
-          margin-bottom: 1.75rem;
+          width: 76px;
+          height: 76px;
+          margin: 0 auto 1.5rem auto;
         }
         .service-icon svg {
-          width: 32px;
-          height: 32px;
+          width: 44px;
+          height: 44px;
+          stroke-width: 2.25;
         }
       }
 
       .service-card:hover .service-icon {
         background-color: var(--color-accent);
-        color: var(--color-secondary);
-        transform: scale(1.05) rotate(5deg);
-        border-style: solid;
+        color: #faf3e1;
+        transform: scale(1.08);
+        border-color: var(--color-accent);
+        box-shadow: 0 4px 15px rgba(83, 4, 9, 0.25);
+      }
+
+      .service-card:hover .service-icon svg {
+        stroke: #faf3e1;
       }
 
       .service-card h3 {
@@ -1164,8 +1235,8 @@
       }
 
       .buy-card-icon {
-        width: 26px;
-        height: 26px;
+        width: 34px;
+        height: 34px;
         background-color: rgba(0, 0, 0, 0.02);
         border-radius: 50%;
         display: flex;
@@ -1179,37 +1250,40 @@
 
       @media (min-width: 768px) {
         .buy-card-icon {
-          width: 48px;
-          height: 48px;
+          width: 54px;
+          height: 54px;
           margin-bottom: 1rem;
         }
       }
 
       @media (min-width: 1024px) {
         .buy-card-icon {
-          width: 56px;
-          height: 56px;
+          width: 62px;
+          height: 62px;
           margin-bottom: 1.25rem;
         }
       }
 
       .buy-card-icon svg {
-        width: 13px;
-        height: 13px;
+        width: 18px;
+        height: 18px;
+        stroke-width: 2.25;
         flex-shrink: 0;
       }
 
       @media (min-width: 768px) {
         .buy-card-icon svg {
-          width: 22px;
-          height: 22px;
+          width: 28px;
+          height: 28px;
+          stroke-width: 2.25;
         }
       }
 
       @media (min-width: 1024px) {
         .buy-card-icon svg {
-          width: 24px;
-          height: 24px;
+          width: 32px;
+          height: 32px;
+          stroke-width: 2.25;
         }
       }
 
@@ -1491,41 +1565,65 @@
         z-index: 2;
       }
 
-      .timeline-num {
-        width: 32px;
-        height: 32px;
-        background-color: var(--color-yellow);
-        border: 2px solid var(--color-primary);
-        border-radius: 50%;
+      .timeline-badge-group {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 0.9rem;
-        font-weight: 800;
+        gap: 0.5rem;
         margin: 0 auto 0.75rem auto;
-        color: var(--color-primary);
-        box-shadow: var(--shadow-sm);
-        transition: var(--transition-base);
+      }
+
+      .timeline-serif-num {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #C9A961;
+        line-height: 1;
       }
 
       @media (min-width: 768px) {
-        .timeline-num {
-          width: 44px;
-          height: 44px;
-          border-width: 3px;
-          font-size: 1.1rem;
-          margin-bottom: 1rem;
+        .timeline-serif-num {
+          font-size: 2.2rem;
         }
       }
 
-      @media (min-width: 1024px) {
-        .timeline-num {
-          width: 50px;
-          height: 50px;
-          border-width: 4px;
-          font-size: 1.25rem;
-          margin-bottom: 1.25rem;
+      .timeline-double-ring-badge {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1.5px solid #C9A961;
+        box-shadow: 0 0 0 2px var(--color-secondary), 0 0 0 3.5px #C9A961;
+        background-color: #FAF3E1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-accent);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .timeline-double-ring-badge svg {
+        width: 28px;
+        height: 28px;
+        stroke: var(--color-accent);
+        stroke-width: 2.25;
+        fill: none;
+      }
+
+      @media (min-width: 768px) {
+        .timeline-double-ring-badge {
+          width: 60px;
+          height: 60px;
         }
+        .timeline-double-ring-badge svg {
+          width: 34px;
+          height: 34px;
+          stroke-width: 2.25;
+        }
+      }
+
+      .timeline-step:hover .timeline-double-ring-badge {
+        transform: scale(1.08);
+        box-shadow: 0 0 0 2px var(--color-secondary), 0 0 0 4px var(--color-accent);
       }
 
       .timeline-step:hover .timeline-num {
@@ -1655,11 +1753,11 @@
       }
 
       .why-card-icon {
-        width: 26px;
-        height: 26px;
+        width: 32px;
+        height: 32px;
         background-color: rgba(var(--color-accent-rgb), 0.05);
         color: var(--color-accent);
-        border-radius: 4px;
+        border-radius: 6px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1668,39 +1766,42 @@
 
       @media (min-width: 768px) {
         .why-card-icon {
-          width: 38px;
-          height: 38px;
-          border-radius: 7px;
+          width: 46px;
+          height: 46px;
+          border-radius: 8px;
           margin-bottom: 1rem;
         }
       }
 
       @media (min-width: 1024px) {
         .why-card-icon {
-          width: 44px;
-          height: 44px;
-          border-radius: 8px;
+          width: 52px;
+          height: 52px;
+          border-radius: 10px;
           margin-bottom: 1.25rem;
         }
       }
 
       .why-card-icon svg {
-        width: 14px;
-        height: 14px;
+        width: 18px;
+        height: 18px;
+        stroke-width: 2.25;
         flex-shrink: 0;
       }
 
       @media (min-width: 768px) {
         .why-card-icon svg {
-          width: 18px;
-          height: 18px;
+          width: 24px;
+          height: 24px;
+          stroke-width: 2.25;
         }
       }
 
       @media (min-width: 1024px) {
         .why-card-icon svg {
-          width: 20px;
-          height: 20px;
+          width: 28px;
+          height: 28px;
+          stroke-width: 2.25;
         }
       }
 
@@ -1804,7 +1905,7 @@
       .area-map-title span {
         width: 8px;
         height: 8px;
-        background-color: #22c55e;
+        background-color: #2d5f25;
         border-radius: 50%;
         display: inline-block;
         position: relative;
@@ -1815,7 +1916,7 @@
         position: absolute;
         inset: -3px;
         border-radius: 50%;
-        background-color: #22c55e;
+        background-color: #2d5f25;
         pointer-events: none;
         animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
         will-change: transform, opacity;
@@ -2819,7 +2920,10 @@
               <!-- Item 1 -->
               <div class="hero-card-item">
                 <div class="hero-card-item-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
                 </div>
                 <div class="hero-card-item-text">
                   <h4 style="margin: 0;">Szybki dojazd do klienta</h4>
@@ -2829,7 +2933,11 @@
               <!-- Item 2 -->
               <div class="hero-card-item">
                 <div class="hero-card-item-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="12" x="2" y="6" rx="2"/>
+                    <circle cx="12" cy="12" r="2"/>
+                    <path d="M6 12h.01M18 12h.01"/>
+                  </svg>
                 </div>
                 <div class="hero-card-item-text">
                   <h4 style="margin: 0;">Gotówka od ręki</h4>
@@ -2839,7 +2947,11 @@
               <!-- Item 3 -->
               <div class="hero-card-item">
                 <div class="hero-card-item-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/>
+                    <path d="M14 2v4a1 1 0 0 0 1 1h4"/>
+                    <path d="m9 15 2 2 4-4"/>
+                  </svg>
                 </div>
                 <div class="hero-card-item-text">
                   <h4 style="margin: 0;">Legalny demontaż</h4>
@@ -2849,7 +2961,13 @@
               <!-- Item 4 -->
               <div class="hero-card-item">
                 <div class="hero-card-item-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
+                    <path d="M15 18H9"/>
+                    <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14v10"/>
+                    <circle cx="17" cy="18" r="2"/>
+                    <circle cx="7" cy="18" r="2"/>
+                  </svg>
                 </div>
                 <div class="hero-card-item-text">
                   <h4 style="margin: 0;">Własny transport lawetą</h4>
@@ -2892,17 +3010,27 @@
               <div class="rivet rivet-bl"></div>
               <div class="rivet rivet-br"></div>
             </div>
+            <div class="service-img-wrapper">
+              <img src="https://i.ibb.co/5WnBMk6D/Whats-App-Image-2026-07-18-at-22-17-16.jpg" alt="Złomowanie Pojazdów" loading="lazy" referrerPolicy="no-referrer" />
+            </div>
             <div class="service-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/>
+                <path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/>
+                <path d="m14 16-3 3 3 3"/>
+                <path d="M8.293 13.596 7.196 9.5 3.1 10.598"/>
+                <path d="m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843"/>
+                <path d="m13.378 9.633 4.096 1.098 1.097-4.096"/>
+              </svg>
             </div>
             <h3>Złomowanie Pojazdów</h3>
             <p>
               Złomujemy wszystko – przyjmujemy każdy pojazd bez względu na stan techniczny, stopień uszkodzenia czy rocznik. Legalnie i od ręki.
             </p>
             <ul class="service-bullets">
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Kasujemy absolutnie każdy pojazd</li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Oficjalne zaświadczenie o kasacji</li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Pomoc w zamknięciu polisy OC</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Kasujemy absolutnie każdy pojazd</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Oficjalne zaświadczenie o kasacji</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Pomoc w zamknięciu polisy OC</li>
             </ul>
           </div>
 
@@ -2914,17 +3042,20 @@
               <div class="rivet rivet-bl"></div>
               <div class="rivet rivet-br"></div>
             </div>
+            <div class="service-img-wrapper">
+              <img src="https://i.ibb.co/h0Xp4d7/Whats-App-Image-2026-07-20-at-15-59-34.jpg" alt="Skup Aut" loading="lazy" referrerPolicy="no-referrer" />
+            </div>
             <div class="service-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="22" height="13" rx="2" ry="2"/><line x1="12" y1="21" x2="12" y2="16"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m21 8-2 2-1.5-3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0-1.903 1.257L5 10 3 8"/><path d="M7 14h.01"/><path d="M17 14h.01"/><rect width="18" height="8" x="3" y="10" rx="2"/><path d="M5 18v2"/><path d="M19 18v2"/></svg>
             </div>
             <h3>Skup Aut</h3>
             <p>
               Kupujemy tylko dobre auta – interesują nas wyłącznie samochody sprawne, w dobrym stanie technicznym, wizualnym oraz nowsze roczniki.
             </p>
             <ul class="service-bullets">
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Kupujemy wyłącznie auta sprawne</li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Szybka wycena przez telefon</li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Formalności i płatność gotówką na miejscu</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Kupujemy wyłącznie auta sprawne</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Szybka wycena przez telefon</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Formalności i płatność gotówką na miejscu</li>
             </ul>
           </div>
 
@@ -2936,17 +3067,26 @@
               <div class="rivet rivet-bl"></div>
               <div class="rivet rivet-br"></div>
             </div>
+            <div class="service-img-wrapper">
+              <img src="https://i.ibb.co/wxrFrQs/Whats-App-Image-2026-07-22-at-06-02-41.jpg" alt="Bezpłatny Odbiór Lawetą" loading="lazy" referrerPolicy="no-referrer" />
+            </div>
             <div class="service-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
+                <path d="M15 18H9"/>
+                <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14v10"/>
+                <circle cx="17" cy="18" r="2"/>
+                <circle cx="7" cy="18" r="2"/>
+              </svg>
             </div>
             <h3>Bezpłatny Odbiór</h3>
             <p>
               Odbierzemy Twoje uszkodzone lub złomowane auto bezpośrednio spod domu własną lawetą – całkowicie bezpłatnie.
             </p>
             <ul class="service-bullets">
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Własna autolaweta do odbioru</li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Koszt transportu: 0 zł</li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Elastyczne godziny odbioru</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Własna autolaweta do odbioru</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Koszt transportu: 0 zł</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Elastyczne godziny odbioru</li>
             </ul>
           </div>
 
@@ -2991,7 +3131,7 @@
               <div class="rivet rivet-br"></div>
             </div>
             <div class="buy-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
             </div>
             <h3>Osobowe</h3>
             <p><strong>Złomowanie:</strong> każdy stan i rocznik.<br><strong>Skup:</strong> wyłącznie auta sprawne i zadbane.</p>
@@ -3006,7 +3146,7 @@
               <div class="rivet rivet-br"></div>
             </div>
             <div class="buy-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="12" height="11" rx="1"/><polygon points="13 8 17 8 20 11 20 14 13 14 13 8"/><circle cx="4.5" cy="17.5" r="2.5"/><circle cx="15.5" cy="17.5" r="2.5"/><path d="M20 14h2.5a.5.5 0 0 0 .5-.5V12"/></svg>
             </div>
             <h3>Dostawcze</h3>
             <p><strong>Złomowanie:</strong> bez względu na stan i zużycie.<br><strong>Skup:</strong> tylko gotowe do jazdy i w pełni sprawne.</p>
@@ -3021,12 +3161,11 @@
               <div class="rivet rivet-br"></div>
             </div>
             <div class="buy-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M19 17h2c.6 0 1-.4 1-1v-5c0-.6-.4-1-1-1h-3l-2.5-4H7c-.6 0-1 .4-1 1v4L3.5 12c-.5.4-.8.9-.8 1.5V16c0 .6.4 1 1 1h2" />
                 <circle cx="7" cy="17" r="2" />
                 <circle cx="17" cy="17" r="2" />
                 <path d="M8 4h8M10 4v2M14 4v2" />
-                <path d="M22 11.5a2 2 0 0 1 0 4" />
               </svg>
             </div>
             <h3>Terenowe</h3>
@@ -3042,7 +3181,7 @@
               <div class="rivet rivet-br"></div>
             </div>
             <div class="buy-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
             </div>
             <h3>Uszkodzone</h3>
             <p><strong>Wyłącznie Złomowanie:</strong> Poważne awarie silnika, skrzyni biegów lub zawieszenia.</p>
@@ -3057,7 +3196,7 @@
               <div class="rivet rivet-br"></div>
             </div>
             <div class="buy-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
             </div>
             <h3>Powypadkowe</h3>
             <p><strong>Wyłącznie Złomowanie:</strong> Auta po kolizjach, wypadkach i nadające się do kasacji.</p>
@@ -3072,7 +3211,7 @@
               <div class="rivet rivet-br"></div>
             </div>
             <div class="buy-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
             </div>
             <h3>Niesprawne</h3>
             <p><strong>Wyłącznie Złomowanie:</strong> Stare, zardzewiałe, nienadające się do bezpiecznej jazdy.</p>
@@ -3087,7 +3226,7 @@
               <div class="rivet rivet-br"></div>
             </div>
             <div class="buy-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>
             </div>
             <h3>Bez Ważnego OC</h3>
             <p><strong>Wyłącznie Złomowanie:</strong> Samochody bez ciągłości ubezpieczenia OC (do kasacji).</p>
@@ -3102,7 +3241,7 @@
               <div class="rivet rivet-br"></div>
             </div>
             <div class="buy-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
             <h3>Bez Przeglądu</h3>
             <p><strong>Wyłącznie Złomowanie:</strong> Pojazdy bez aktualnego, ważnego badania technicznego.</p>
@@ -3204,21 +3343,48 @@
           
           <!-- Step 1 -->
           <div class="timeline-step" id="step-1">
-            <div class="timeline-num">1</div>
+            <div class="timeline-badge-group">
+              <span class="timeline-serif-num">1</span>
+              <div class="timeline-double-ring-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+            </div>
             <h3>Kontakt i Wycena</h3>
             <p>Zadzwoń pod numer 795 049 095. Wycenimy Twoje auto w kilka minut podczas rozmowy.</p>
           </div>
 
           <!-- Step 2 -->
           <div class="timeline-step" id="step-2">
-            <div class="timeline-num">2</div>
+            <div class="timeline-badge-group">
+              <span class="timeline-serif-num">2</span>
+              <div class="timeline-double-ring-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
+                  <path d="M15 18H9"/>
+                  <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14v10"/>
+                  <circle cx="17" cy="18" r="2"/>
+                  <circle cx="7" cy="18" r="2"/>
+                </svg>
+              </div>
+            </div>
             <h3>Bezpłatny Odbiór</h3>
             <p>Przyjeżdżamy po pojazd własną lawetą bezpośrednio pod Twój dom – całkowicie za darmo.</p>
           </div>
 
           <!-- Step 3 -->
           <div class="timeline-step" id="step-3">
-            <div class="timeline-num">3</div>
+            <div class="timeline-badge-group">
+              <span class="timeline-serif-num">3</span>
+              <div class="timeline-double-ring-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="12" x="2" y="6" rx="2"/>
+                  <circle cx="12" cy="12" r="2"/>
+                  <path d="M6 12h.01M18 12h.01"/>
+                </svg>
+              </div>
+            </div>
             <h3>Gotówka i Dokumenty</h3>
             <p>Na miejscu wypłacamy gotówkę od ręki oraz wydajemy legalne zaświadczenie o kasacji.</p>
           </div>
@@ -3262,7 +3428,7 @@
               <div class="rivet rivet-br"></div>
             </div>
             <div class="why-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
             </div>
             <h3>Szybki Odbiór</h3>
             <p>Przyjeżdżamy po pojazd własną lawetą tego samego dnia od zgłoszenia.</p>
@@ -3277,9 +3443,9 @@
               <div class="rivet rivet-br"></div>
             </div>
             <div class="why-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="8" r="7" />
-                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="6" />
+                <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
               </svg>
             </div>
             <h3>Profesjonalna obsługa</h3>
@@ -3295,7 +3461,7 @@
               <div class="rivet rivet-br"></div>
             </div>
             <div class="why-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
             </div>
             <h3>Legalny Proces</h3>
             <p>Otrzymasz oficjalne zaświadczenie o kasacji, potrzebne do wyrejestrowania auta.</p>
@@ -3310,7 +3476,7 @@
               <div class="rivet rivet-br"></div>
             </div>
             <div class="why-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z"/></svg>
             </div>
             <h3>0 zł Ukrytych Opłat</h3>
             <p>Wycena, dojazd lawety oraz transport pojazdu są w pełni darmowe – zero opłat.</p>
@@ -3375,6 +3541,12 @@
           <div class="realization-card glass-panel-light">
             <div class="realization-img-wrapper">
               <img src="https://i.ibb.co/jPKq7S0G/Whats-App-Image-2026-07-18-at-22-16-21.jpg" alt="Złomowanie - Kasacja Opolskie - Nasza Flota" loading="lazy" referrerPolicy="no-referrer" />
+            </div>
+          </div>
+
+          <div class="realization-card glass-panel-light">
+            <div class="realization-img-wrapper">
+              <img src="https://i.ibb.co/wxrFrQs/Whats-App-Image-2026-07-22-at-06-02-41.jpg" alt="Złomowanie - Kasacja Opolskie - Nasza Flota" loading="lazy" referrerPolicy="no-referrer" />
             </div>
           </div>
         </div>
@@ -3536,12 +3708,12 @@
                 <div class="rivet rivet-bl"></div>
                 <div class="rivet rivet-br"></div>
               </div>
-              <div class="contact-icon-box" style="background-color: #25d366;">
+              <div class="contact-icon-box" style="background-color: #2d5f25;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.454 5.709 1.455h.008c6.56 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg>
               </div>
               <div class="contact-detail-text">
                 <h3>WhatsApp (Wiadomość / Wycena)</h3>
-                <p><a href="https://wa.me/48795049095" target="_blank" rel="noopener noreferrer" style="color: #25d366; font-size:1.35rem; font-weight:800;">Wyślij wiadomość</a></p>
+                <p><a href="https://wa.me/48795049095" target="_blank" rel="noopener noreferrer" style="color: #2d5f25; font-size:1.35rem; font-weight:800;">Wyślij wiadomość</a></p>
               </div>
             </div>
 
