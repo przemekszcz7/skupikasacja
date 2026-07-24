@@ -695,8 +695,8 @@
 
       @media (min-width: 1024px) {
         .hero-container {
-          grid-template-columns: 1.15fr 0.85fr;
-          max-width: 1200px;
+          grid-template-columns: 1fr;
+          max-width: 900px;
           margin: 0 auto;
           gap: 3.5rem;
         }
@@ -925,7 +925,7 @@
       }
 
       .service-card {
-        background-color: var(--color-secondary);
+        background-color: #ffffff;
         border: 1px solid var(--color-border);
         border-radius: 12px;
         padding: 0.6rem 0.4rem;
@@ -1201,7 +1201,7 @@
       }
 
       .buy-card {
-        background-color: var(--color-secondary);
+        background-color: #ffffff;
         border: 1px solid var(--color-border);
         border-radius: 8px;
         padding: 0.5rem 0.2rem;
@@ -1577,7 +1577,7 @@
         font-family: 'Playfair Display', Georgia, serif;
         font-size: 1.8rem;
         font-weight: 700;
-        color: #C9A961;
+        color: var(--color-accent);
         line-height: 1;
       }
 
@@ -1716,7 +1716,7 @@
       }
 
       .why-card {
-        background-color: var(--color-secondary);
+        background-color: #ffffff;
         border: 1px solid var(--color-border);
         border-radius: 10px;
         padding: 0.75rem 0.35rem;
@@ -2082,7 +2082,7 @@
       }
 
       .fb-card {
-        background: var(--color-secondary);
+        background: #ffffff;
         border-radius: 16px;
         padding: 2rem 1.25rem;
         border: 1px solid var(--color-border);
@@ -2263,7 +2263,7 @@
         display: flex;
         align-items: flex-start;
         gap: 1.5rem;
-        background: var(--color-section-bg);
+        background: #ffffff;
         padding: 1.75rem;
         border-radius: 12px;
         border: 1px solid var(--color-border);
@@ -2905,77 +2905,7 @@
 
         </div>
 
-        <!-- Right Column / Sidebar -->
-        <div class="hero-sidebar" id="hero-right">
-          <div class="hero-card steel-card">
-            <!-- Rivets for industrial character -->
-            <div class="rivets-container">
-              <div class="rivet rivet-tl"></div>
-              <div class="rivet rivet-tr"></div>
-              <div class="rivet rivet-bl"></div>
-              <div class="rivet rivet-br"></div>
-            </div>
-            
-            <div class="hero-card-list" style="margin-top: 0.5rem;">
-              <!-- Item 1 -->
-              <div class="hero-card-item">
-                <div class="hero-card-item-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"/>
-                    <polyline points="12 6 12 12 16 14"/>
-                  </svg>
-                </div>
-                <div class="hero-card-item-text">
-                  <h4 style="margin: 0;">Szybki dojazd do klienta</h4>
-                </div>
-              </div>
-              
-              <!-- Item 2 -->
-              <div class="hero-card-item">
-                <div class="hero-card-item-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                    <rect width="20" height="12" x="2" y="6" rx="2"/>
-                    <circle cx="12" cy="12" r="2"/>
-                    <path d="M6 12h.01M18 12h.01"/>
-                  </svg>
-                </div>
-                <div class="hero-card-item-text">
-                  <h4 style="margin: 0;">Gotówka od ręki</h4>
-                </div>
-              </div>
-              
-              <!-- Item 3 -->
-              <div class="hero-card-item">
-                <div class="hero-card-item-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/>
-                    <path d="M14 2v4a1 1 0 0 0 1 1h4"/>
-                    <path d="m9 15 2 2 4-4"/>
-                  </svg>
-                </div>
-                <div class="hero-card-item-text">
-                  <h4 style="margin: 0;">Legalny demontaż</h4>
-                </div>
-              </div>
-              
-              <!-- Item 4 -->
-              <div class="hero-card-item">
-                <div class="hero-card-item-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
-                    <path d="M15 18H9"/>
-                    <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14v10"/>
-                    <circle cx="17" cy="18" r="2"/>
-                    <circle cx="7" cy="18" r="2"/>
-                  </svg>
-                </div>
-                <div class="hero-card-item-text">
-                  <h4 style="margin: 0;">Własny transport lawetą</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
 
       </div>
     </section>
@@ -3011,7 +2941,7 @@
               <div class="rivet rivet-br"></div>
             </div>
             <div class="service-img-wrapper">
-              <img src="https://i.ibb.co/5WnBMk6D/Whats-App-Image-2026-07-18-at-22-17-16.jpg" alt="Złomowanie Pojazdów" loading="lazy" referrerPolicy="no-referrer" />
+              <img src="https://i.ibb.co/h0Xp4d7/Whats-App-Image-2026-07-20-at-15-59-34.jpg" alt="Złomowanie Pojazdów" loading="lazy" referrerPolicy="no-referrer" />
             </div>
             <div class="service-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
@@ -3043,7 +2973,7 @@
               <div class="rivet rivet-br"></div>
             </div>
             <div class="service-img-wrapper">
-              <img src="https://i.ibb.co/h0Xp4d7/Whats-App-Image-2026-07-20-at-15-59-34.jpg" alt="Skup Aut" loading="lazy" referrerPolicy="no-referrer" />
+              <img src="https://i.ibb.co/5WnBMk6D/Whats-App-Image-2026-07-18-at-22-17-16.jpg" alt="Skup Aut" loading="lazy" referrerPolicy="no-referrer" />
             </div>
             <div class="service-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m21 8-2 2-1.5-3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0-1.903 1.257L5 10 3 8"/><path d="M7 14h.01"/><path d="M17 14h.01"/><rect width="18" height="8" x="3" y="10" rx="2"/><path d="M5 18v2"/><path d="M19 18v2"/></svg>
