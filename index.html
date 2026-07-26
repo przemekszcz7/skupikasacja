@@ -908,12 +908,13 @@
 
       .services-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.35rem;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
       }
 
       @media (min-width: 768px) {
         .services-grid {
+          grid-template-columns: repeat(3, 1fr);
           gap: 1.5rem;
         }
       }
@@ -928,7 +929,7 @@
         background-color: #ffffff;
         border: 1px solid var(--color-border);
         border-radius: 12px;
-        padding: 0.6rem 0.4rem;
+        padding: 1.25rem 1rem;
         box-shadow: var(--shadow-sm);
         transition: var(--transition-base);
         position: relative;
@@ -972,9 +973,9 @@
       }
 
       .service-img-wrapper {
-        width: calc(100% + 0.8rem);
-        margin: -0.6rem -0.4rem 0.85rem -0.4rem;
-        height: 150px;
+        width: calc(100% + 2rem);
+        margin: -1.25rem -1rem 1.25rem -1rem;
+        height: 180px;
         border-radius: 0;
         overflow: hidden;
         border-bottom: 1px solid var(--color-border);
@@ -1073,12 +1074,12 @@
       }
 
       .service-card h3 {
-        font-size: 0.68rem;
-        margin-bottom: 0.3rem;
+        font-size: 1.15rem;
+        margin-bottom: 0.5rem;
         text-transform: uppercase;
-        word-break: break-word;
-        overflow-wrap: break-word;
-        line-height: 1.15;
+        word-break: normal;
+        overflow-wrap: normal;
+        line-height: 1.3;
       }
 
       @media (min-width: 768px) {
@@ -1097,11 +1098,11 @@
       }
 
       .service-card p {
-        font-size: 0.58rem;
-        margin-bottom: 0.5rem;
-        line-height: 1.2;
-        word-break: break-word;
-        overflow-wrap: break-word;
+        font-size: 0.875rem;
+        margin-bottom: 0.85rem;
+        line-height: 1.4;
+        word-break: normal;
+        overflow-wrap: normal;
       }
 
       @media (min-width: 768px) {
@@ -1124,7 +1125,7 @@
         list-style: none;
         display: flex;
         flex-direction: column;
-        gap: 0.2rem;
+        gap: 0.45rem;
         margin-top: auto;
       }
 
@@ -1135,14 +1136,14 @@
       }
 
       .service-bullets li {
-        font-size: 0.54rem;
+        font-size: 0.85rem;
         font-weight: 500;
         display: flex;
-        align-items: flex-start;
-        gap: 0.2rem;
-        word-break: break-word;
-        overflow-wrap: break-word;
-        line-height: 1.15;
+        align-items: center;
+        gap: 0.4rem;
+        word-break: normal;
+        overflow-wrap: normal;
+        line-height: 1.4;
       }
 
       @media (min-width: 768px) {
@@ -1164,9 +1165,9 @@
       .service-bullets svg {
         stroke: var(--color-accent);
         flex-shrink: 0;
-        width: 8px;
-        height: 8px;
-        margin-top: 1px;
+        width: 14px;
+        height: 14px;
+        margin-top: 0;
       }
 
       @media (min-width: 768px) {
@@ -1363,13 +1364,9 @@
       @media (max-width: 767px) {
         .legal-grid {
           display: flex;
-          overflow-x: auto;
-          flex-wrap: nowrap;
-          scroll-snap-type: x mandatory;
-          -webkit-overflow-scrolling: touch;
-          padding-bottom: 1rem;
-          margin-bottom: -0.5rem;
-          gap: 0.75rem;
+          flex-direction: column;
+          gap: 1.25rem;
+          margin-top: 1.5rem;
         }
       }
 
@@ -1389,7 +1386,7 @@
 
       .legal-card {
         border-radius: 12px;
-        padding: 0.75rem;
+        padding: 1.25rem 1rem;
         transition: var(--transition-base);
         display: flex;
         flex-direction: column;
@@ -1398,8 +1395,7 @@
 
       @media (max-width: 767px) {
         .legal-card {
-          flex: 0 0 250px;
-          scroll-snap-align: start;
+          width: 100%;
         }
       }
 
@@ -1440,11 +1436,11 @@
 
       .legal-card h3 {
         color: var(--color-primary);
-        font-size: 0.75rem;
-        margin-bottom: 0.25rem;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
         text-transform: uppercase;
         letter-spacing: -0.02em;
-        line-height: 1.1;
+        line-height: 1.3;
       }
 
       @media (min-width: 768px) {
@@ -1465,8 +1461,8 @@
 
       .legal-card p {
         color: var(--color-text-muted);
-        font-size: 0.65rem;
-        line-height: 1.2;
+        font-size: 0.875rem;
+        line-height: 1.4;
       }
 
       @media (min-width: 768px) {
@@ -1499,17 +1495,16 @@
       @media (max-width: 767px) {
         .timeline-container {
           display: flex;
-          overflow-x: auto;
-          flex-wrap: nowrap;
-          scroll-snap-type: x mandatory;
-          -webkit-overflow-scrolling: touch;
-          padding-bottom: 1rem;
-          margin-bottom: -0.5rem;
-          gap: 0.5rem;
+          flex-direction: column;
+          gap: 1.25rem;
+          padding: 0.5rem 0;
         }
         .timeline-step {
-          flex: 0 0 130px;
-          scroll-snap-align: start;
+          width: 100%;
+          padding: 1.25rem 1rem;
+        }
+        .timeline-container::after {
+          display: none;
         }
       }
 
@@ -1537,12 +1532,6 @@
         background-color: var(--color-border);
         z-index: 1;
         display: block;
-      }
-
-      @media (max-width: 767px) {
-        .timeline-container::after {
-          width: 390px; /* 3 steps * 130px */
-        }
       }
 
       @media (min-width: 768px) {
@@ -1652,11 +1641,11 @@
       }
 
       .timeline-step h3 {
-        font-size: 0.6rem;
-        margin-bottom: 0.2rem;
+        font-size: 1.05rem;
+        margin-bottom: 0.4rem;
         text-transform: uppercase;
-        line-height: 1.1;
-        word-break: break-word;
+        line-height: 1.3;
+        word-break: normal;
       }
 
       @media (min-width: 768px) {
@@ -1676,10 +1665,10 @@
       }
 
       .timeline-step p {
-        font-size: 0.55rem;
+        font-size: 0.875rem;
         color: var(--color-text-muted);
-        line-height: 1.15;
-        word-break: break-word;
+        line-height: 1.4;
+        word-break: normal;
       }
 
       @media (min-width: 768px) {
@@ -1711,13 +1700,8 @@
       @media (max-width: 767px) {
         .why-grid {
           display: flex;
-          overflow-x: auto;
-          flex-wrap: nowrap;
-          scroll-snap-type: x mandatory;
-          -webkit-overflow-scrolling: touch;
-          padding-bottom: 1rem;
-          margin-bottom: -0.5rem;
-          gap: 0.5rem;
+          flex-direction: column;
+          gap: 1.25rem;
         }
       }
 
@@ -1737,7 +1721,7 @@
         background-color: #ffffff;
         border: 1px solid var(--color-border);
         border-radius: 10px;
-        padding: 0.75rem 0.35rem;
+        padding: 1.25rem 1rem;
         box-shadow: var(--shadow-sm);
         transition: var(--transition-base);
         display: flex;
@@ -1747,8 +1731,7 @@
 
       @media (max-width: 767px) {
         .why-card {
-          flex: 0 0 150px;
-          scroll-snap-align: start;
+          width: 100%;
         }
       }
 
@@ -1771,15 +1754,15 @@
       }
 
       .why-card-icon {
-        width: 32px;
-        height: 32px;
+        width: 42px;
+        height: 42px;
         background-color: rgba(var(--color-accent-rgb), 0.05);
         color: var(--color-accent);
-        border-radius: 6px;
+        border-radius: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.75rem;
       }
 
       @media (min-width: 768px) {
@@ -1801,8 +1784,8 @@
       }
 
       .why-card-icon svg {
-        width: 18px;
-        height: 18px;
+        width: 22px;
+        height: 22px;
         stroke-width: 2.25;
         flex-shrink: 0;
       }
@@ -1824,11 +1807,11 @@
       }
 
       .why-card h3 {
-        font-size: 0.65rem;
-        margin-bottom: 0.25rem;
+        font-size: 1.05rem;
+        margin-bottom: 0.4rem;
         text-transform: uppercase;
-        line-height: 1.1;
-        word-break: break-word;
+        line-height: 1.3;
+        word-break: normal;
       }
 
       @media (min-width: 768px) {
@@ -1848,9 +1831,9 @@
       }
 
       .why-card p {
-        font-size: 0.55rem;
-        line-height: 1.2;
-        word-break: break-word;
+        font-size: 0.875rem;
+        line-height: 1.4;
+        word-break: normal;
       }
 
       @media (min-width: 768px) {
@@ -2835,10 +2818,7 @@
           </label>
           <ul class="nav-links">
             <li><a href="#services">Nasze Usługi</a></li>
-            <li><a href="#co-skupujemy">Co Skupujemy</a></li>
-            <li><a href="#legal-scrap">Legalne Złomowanie</a></li>
             <li><a href="#how-it-works">Jak to Działa</a></li>
-            <li><a href="#why-choose-us">Dlaczego My</a></li>
             <li><a href="#realizations">Galeria</a></li>
             <li><a href="#area">Obszar Działania</a></li>
             <li><a href="#contact">Kontakt</a></li>
@@ -2905,11 +2885,7 @@
             Zajmujemy się legalnym złomowaniem pojazdów oraz skupem samochodów na terenie całego województwa Opolskiego.
           </p>
           
-          <div class="hero-benefits-text" id="benefits-list">
-            <p>Zapewniamy darmową wycenę oraz bezpłatny odbiór pojazdu naszym transportem bezpośrednio spod adresu.</p>
-            <p>Wystawiamy legalne zaświadczenie o demontażu pojazdu potrzebne do wyrejestrowania oraz zwrotu składki OC.</p>
-          </div>
-          
+
           <div class="hero-ctas">
             <a href="tel:+48795049095" class="btn btn-accent" id="btn-hero-call">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -2974,13 +2950,8 @@
             </div>
             <h3>Złomowanie Pojazdów</h3>
             <p>
-              Złomujemy wszystko – przyjmujemy każdy pojazd bez względu na stan techniczny, stopień uszkodzenia czy rocznik. Legalnie i od ręki.
+              Zajmujemy się legalnym Złomowaniem/Kasacją pojazdów - zapewniamy komplet dokumentów do wyrejestrowania w urzędzie oraz otrzymania zwrotu składki OC.
             </p>
-            <ul class="service-bullets">
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Kasujemy absolutnie każdy pojazd</li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Oficjalne zaświadczenie o kasacji</li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Pomoc w zamknięciu polisy OC</li>
-            </ul>
           </div>
 
           <!-- Card 2 (Skup Aut - swapped to second position) -->
@@ -2999,13 +2970,8 @@
             </div>
             <h3>Skup Aut</h3>
             <p>
-              Kupujemy tylko dobre auta – interesują nas wyłącznie samochody sprawne, w dobrym stanie technicznym, wizualnym oraz nowsze roczniki.
+              Skupujemy pojazdy używane każdego typu/marki, nowsze, starsze, osobowe, dostawcze, terenowe, zapewniamy bezpłatną wstępną wycenę.
             </p>
-            <ul class="service-bullets">
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Kupujemy wyłącznie auta sprawne</li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Szybka wycena przez telefon</li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Formalności i płatność gotówką na miejscu</li>
-            </ul>
           </div>
 
           <!-- Card 3 (Bezpłatny Odbiór - swapped to third position) -->
@@ -3030,243 +2996,8 @@
             </div>
             <h3>Bezpłatny Odbiór</h3>
             <p>
-              Odbierzemy Twoje uszkodzone lub złomowane auto bezpośrednio spod domu własną lawetą – całkowicie bezpłatnie.
+              Zapewniamy bezpłatny odbiór twojego auta własnym transportem ze wskazanego adresu
             </p>
-            <ul class="service-bullets">
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Własna autolaweta do odbioru</li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Koszt transportu: 0 zł</li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Elastyczne godziny odbioru</li>
-            </ul>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SEKCJA 3 – CO SKUPUJEMY -->
-    <section class="what-we-buy section-padding rust-vignette-left" id="co-skupujemy">
-      <!-- Swaying Chain Decoration -->
-      <div class="industrial-chain-container" style="top: -10px; right: 5%; width: 24px; height: 220px; color: var(--color-primary);">
-        <svg viewBox="0 0 24 220" width="100%" height="100%">
-          <rect x="9" y="0" width="6" height="35" rx="3" fill="none" stroke="currentColor" stroke-width="2" />
-          <rect x="9" y="25" width="6" height="35" rx="3" fill="none" stroke="currentColor" stroke-width="2" transform="rotate(90 12 42.5)" />
-          <rect x="9" y="50" width="6" height="35" rx="3" fill="none" stroke="currentColor" stroke-width="2" />
-          <rect x="9" y="75" width="6" height="35" rx="3" fill="none" stroke="currentColor" stroke-width="2" transform="rotate(90 12 92.5)" />
-          <rect x="9" y="100" width="6" height="35" rx="3" fill="none" stroke="currentColor" stroke-width="2" />
-          <rect x="9" y="125" width="6" height="35" rx="3" fill="none" stroke="currentColor" stroke-width="2" transform="rotate(90 12 142.5)" />
-          <rect x="9" y="150" width="6" height="35" rx="3" fill="none" stroke="currentColor" stroke-width="2" />
-          <rect x="9" y="175" width="6" height="35" rx="3" fill="none" stroke="currentColor" stroke-width="2" transform="rotate(90 12 192.5)" />
-          <rect x="9" y="200" width="6" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2" />
-        </svg>
-      </div>
-
-      <div class="container">
-        
-        <div class="section-header">
-          <span class="badge">Szeroka Oferta</span>
-          <h2>Co Złomujemy i Kupujemy?</h2>
-          <p>Złomujemy absolutnie każdy pojazd bez względu na stan. Skupujemy wyłącznie sprawne i zadbane auta.</p>
-        </div>
-
-        <div class="buy-grid" id="what-we-buy-list">
-          
-          <!-- Item 1 -->
-          <div class="buy-card steel-card" id="buy-osobowe">
-            <div class="rivets-container">
-              <div class="rivet rivet-tl"></div>
-              <div class="rivet rivet-tr"></div>
-              <div class="rivet rivet-bl"></div>
-              <div class="rivet rivet-br"></div>
-            </div>
-            <div class="buy-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
-            </div>
-            <h3>Osobowe</h3>
-            <p><strong>Złomowanie:</strong> każdy stan i rocznik.<br><strong>Skup:</strong> wyłącznie auta sprawne i zadbane.</p>
-          </div>
-
-          <!-- Item 2 -->
-          <div class="buy-card steel-card" id="buy-dostawcze">
-            <div class="rivets-container">
-              <div class="rivet rivet-tl"></div>
-              <div class="rivet rivet-tr"></div>
-              <div class="rivet rivet-bl"></div>
-              <div class="rivet rivet-br"></div>
-            </div>
-            <div class="buy-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="12" height="11" rx="1"/><polygon points="13 8 17 8 20 11 20 14 13 14 13 8"/><circle cx="4.5" cy="17.5" r="2.5"/><circle cx="15.5" cy="17.5" r="2.5"/><path d="M20 14h2.5a.5.5 0 0 0 .5-.5V12"/></svg>
-            </div>
-            <h3>Dostawcze</h3>
-            <p><strong>Złomowanie:</strong> bez względu na stan i zużycie.<br><strong>Skup:</strong> tylko gotowe do jazdy i w pełni sprawne.</p>
-          </div>
-
-          <!-- Item 3 -->
-          <div class="buy-card steel-card" id="buy-terenowe">
-            <div class="rivets-container">
-              <div class="rivet rivet-tl"></div>
-              <div class="rivet rivet-tr"></div>
-              <div class="rivet rivet-bl"></div>
-              <div class="rivet rivet-br"></div>
-            </div>
-            <div class="buy-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M19 17h2c.6 0 1-.4 1-1v-5c0-.6-.4-1-1-1h-3l-2.5-4H7c-.6 0-1 .4-1 1v4L3.5 12c-.5.4-.8.9-.8 1.5V16c0 .6.4 1 1 1h2" />
-                <circle cx="7" cy="17" r="2" />
-                <circle cx="17" cy="17" r="2" />
-                <path d="M8 4h8M10 4v2M14 4v2" />
-              </svg>
-            </div>
-            <h3>Terenowe</h3>
-            <p><strong>Złomowanie:</strong> uszkodzone, rozbite 4x4.<br><strong>Skup:</strong> wyłącznie zadbane, sprawne SUV-y i terenowe.</p>
-          </div>
-
-          <!-- Item 4 -->
-          <div class="buy-card steel-card" id="buy-uszkodzone">
-            <div class="rivets-container">
-              <div class="rivet rivet-tl"></div>
-              <div class="rivet rivet-tr"></div>
-              <div class="rivet rivet-bl"></div>
-              <div class="rivet rivet-br"></div>
-            </div>
-            <div class="buy-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-            </div>
-            <h3>Uszkodzone</h3>
-            <p><strong>Wyłącznie Złomowanie:</strong> Poważne awarie silnika, skrzyni biegów lub zawieszenia.</p>
-          </div>
-
-          <!-- Item 5 -->
-          <div class="buy-card steel-card" id="buy-powypadkowe">
-            <div class="rivets-container">
-              <div class="rivet rivet-tl"></div>
-              <div class="rivet rivet-tr"></div>
-              <div class="rivet rivet-bl"></div>
-              <div class="rivet rivet-br"></div>
-            </div>
-            <div class="buy-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            </div>
-            <h3>Powypadkowe</h3>
-            <p><strong>Wyłącznie Złomowanie:</strong> Auta po kolizjach, wypadkach i nadające się do kasacji.</p>
-          </div>
-
-          <!-- Item 6 -->
-          <div class="buy-card steel-card" id="buy-niesprawne">
-            <div class="rivets-container">
-              <div class="rivet rivet-tl"></div>
-              <div class="rivet rivet-tr"></div>
-              <div class="rivet rivet-bl"></div>
-              <div class="rivet rivet-br"></div>
-            </div>
-            <div class="buy-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-            </div>
-            <h3>Niesprawne</h3>
-            <p><strong>Wyłącznie Złomowanie:</strong> Stare, zardzewiałe, nienadające się do bezpiecznej jazdy.</p>
-          </div>
-
-          <!-- Item 7 -->
-          <div class="buy-card steel-card" id="buy-bez-oc">
-            <div class="rivets-container">
-              <div class="rivet rivet-tl"></div>
-              <div class="rivet rivet-tr"></div>
-              <div class="rivet rivet-bl"></div>
-              <div class="rivet rivet-br"></div>
-            </div>
-            <div class="buy-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>
-            </div>
-            <h3>Bez Ważnego OC</h3>
-            <p><strong>Wyłącznie Złomowanie:</strong> Samochody bez ciągłości ubezpieczenia OC (do kasacji).</p>
-          </div>
-
-          <!-- Item 8 -->
-          <div class="buy-card steel-card" id="buy-bez-przegladu">
-            <div class="rivets-container">
-              <div class="rivet rivet-tl"></div>
-              <div class="rivet rivet-tr"></div>
-              <div class="rivet rivet-bl"></div>
-              <div class="rivet rivet-br"></div>
-            </div>
-            <div class="buy-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-            <h3>Bez Przeglądu</h3>
-            <p><strong>Wyłącznie Złomowanie:</strong> Pojazdy bez aktualnego, ważnego badania technicznego.</p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- INDUSTRIAL HAZARD DIVIDER -->
-    <div class="industrial-hazard-bar"></div>
-
-    <!-- SEKCJA 4 – LEGALNA KASACJA I ZŁOMOWANIE -->
-    <section class="legal-scrap section-padding rust-vignette-right" id="legal-scrap">
-      <!-- Industrial Rotating Gear Watermark -->
-      <div class="industrial-gear-container gear-spin-cw" style="top: 15%; left: 3%; width: 130px; height: 130px;">
-        <svg viewBox="0 0 100 100" fill="currentColor" width="100%" height="100%">
-          <path d="M50 35a15 15 0 1 0 0 30 15 15 0 0 0 0-30zm0 10a5 5 0 1 1 0 10 5 5 0 0 1 0-10z" />
-          <path d="M50 5c-1.5 0-2.8 1.1-3 2.6l-.4 3.1c-1.8.4-3.6 1.1-5.2 2.1l-2.4-2.1c-1.1-.9-2.7-.9-3.7.2l-2.8 2.8c-1 1-1 2.6-.1 3.7l2.1 2.4c-1 1.6-1.7 3.4-2.1 5.2l-3.1.4c-1.5.2-2.6 1.5-2.6 3v4c0 1.5 1.1 2.8 2.6 3l3.1.4c.4 1.8 1.1 3.6 2.1 5.2l-2.1 2.4c-.9 1.1-.9 2.7.2 3.7l2.8 2.8c1 1 2.6 1 3.7.1l2.4-2.1c1.6 1 3.4 1.7 5.2 2.1l.4 3.1c.2 1.5 1.5 2.6 3 2.6h4c1.5 0 2.8-1.1 3-2.6l.4-3.1c1.8-.4 3.6-1.1 5.2-2.1l2.4 2.1c1.1.9 2.7.9 3.7-.2l2.8-2.8c1-1 1-2.6.1-3.7l-2.1-2.4c1-1.6 1.7-3.4 2.1-5.2l3.1-.4c1.5-.2(1.5-2.6) 2.6-3v-4c0-1.5-1.1-2.8-2.6-3l-3.1-.4c-.4-1.8-1.1-3.6-2.1-5.2l2.1-2.4c.9-1.1.9-2.7-.2-3.7l-2.8-2.8c-1-1-2.6-1-3.7-.1l-2.4 2.1c-1.6-1-3.4-1.7-5.2-2.1l-.4-3.1c-.2-1.5-1.5-2.6-3-2.6h-4z" fill="none" stroke="currentColor" stroke-width="2.5" />
-        </svg>
-      </div>
-
-      <div class="container">
-        
-        <div class="section-header">
-          <span class="badge" style="color: var(--color-accent)">100% Zgodnie z Prawem</span>
-          <h2 style="color: var(--color-primary)">Legalna Kasacja - Złomowanie Pojazdów</h2>
-          <p style="color: var(--color-text-muted)">Pełne bezpieczeństwo prawne i legalność. Wszystkie formalności załatwiamy sprawnie i legalnie.</p>
-        </div>
-
-        <div class="legal-grid" id="legal-steps">
-          
-          <!-- Card 1 -->
-          <div class="legal-card glass-panel-light steel-card" id="legal-card-1">
-            <div class="rivets-container">
-              <div class="rivet rivet-tl"></div>
-              <div class="rivet rivet-tr"></div>
-              <div class="rivet rivet-bl"></div>
-              <div class="rivet rivet-br"></div>
-            </div>
-            <div>
-              <div class="legal-card-num">01</div>
-              <h3>Urzędowe Zaświadczenie</h3>
-            </div>
-            <p>Wystawiamy oficjalne zaświadczenie o demontażu potrzebne do wyrejestrowania auta w urzędzie.</p>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="legal-card glass-panel-light steel-card" id="legal-card-2">
-            <div class="rivets-container">
-              <div class="rivet rivet-tl"></div>
-              <div class="rivet rivet-tr"></div>
-              <div class="rivet rivet-bl"></div>
-              <div class="rivet rivet-br"></div>
-            </div>
-            <div>
-              <div class="legal-card-num">02</div>
-              <h3>Wyrejestrowanie Auta</h3>
-            </div>
-            <p>Z naszym zaświadczeniem bez problemu wyrejestrujesz auto w Wydziale Komunikacji i zamkniesz jego historię.</p>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="legal-card glass-panel-light steel-card" id="legal-card-3">
-            <div class="rivets-container">
-              <div class="rivet rivet-tl"></div>
-              <div class="rivet rivet-tr"></div>
-              <div class="rivet rivet-bl"></div>
-              <div class="rivet rivet-br"></div>
-            </div>
-            <div>
-              <div class="legal-card-num">03</div>
-              <h3>Zwrot Składki OC</h3>
-            </div>
-            <p>Zgłoś kasację ubezpieczycielowi, rozwiąż polisę i odbierz zwrot pieniędzy za niewykorzystany okres OC.</p>
           </div>
 
         </div>
@@ -3301,7 +3032,7 @@
               </div>
             </div>
             <h3>Kontakt i Wycena</h3>
-            <p>Zadzwoń pod numer 795 049 095. Wycenimy Twoje auto w kilka minut podczas rozmowy.</p>
+            <p>Zadzwoń pod numer 795 049 095, a My wstępnie wycenimy Twoje auto podczas rozmowy.</p>
           </div>
 
           <!-- Step 2 -->
@@ -3335,106 +3066,16 @@
               </div>
             </div>
             <h3>Gotówka i Dokumenty</h3>
-            <p>Na miejscu wypłacamy gotówkę od ręki oraz wydajemy legalne zaświadczenie o kasacji.</p>
+            <p>Na miejscu przed odbiorem dopełniamy formalności, wypłacamy gotówkę.</p>
           </div>
 
         </div>
 
       </div>
-    </section>
-
     </section>
 
     <!-- INDUSTRIAL HAZARD DIVIDER -->
     <div class="industrial-hazard-bar"></div>
-
-    <!-- SEKCJA 6 – DLACZEGO WARTO -->
-    <section class="why-choose-us section-padding rust-vignette-right" id="why-choose-us">
-      <!-- Industrial Rotating Gear Watermark -->
-      <div class="industrial-gear-container gear-spin-cw" style="top: 8%; left: 3%; width: 150px; height: 150px;">
-        <svg viewBox="0 0 100 100" fill="currentColor" width="100%" height="100%">
-          <path d="M50 35a15 15 0 1 0 0 30 15 15 0 0 0 0-30zm0 10a5 5 0 1 1 0 10 5 5 0 0 1 0-10z" />
-          <path d="M50 5c-1.5 0-2.8 1.1-3 2.6l-.4 3.1c-1.8.4-3.6 1.1-5.2 2.1l-2.4-2.1c-1.1-.9-2.7-.9-3.7.2l-2.8 2.8c-1 1-1 2.6-.1 3.7l2.1 2.4c-1 1.6-1.7 3.4-2.1 5.2l-3.1.4c-1.5.2-2.6 1.5-2.6 3v4c0 1.5 1.1 2.8 2.6 3l3.1.4c.4 1.8 1.1 3.6 2.1 5.2l-2.1 2.4c-.9 1.1-.9 2.7.2 3.7l2.8 2.8c1 1 2.6 1 3.7.1l2.4-2.1c1.6 1 3.4 1.7 5.2 2.1l.4 3.1c.2 1.5 1.5 2.6 3 2.6h4c1.5 0 2.8-1.1 3-2.6l.4-3.1c1.8-.4 3.6-1.1 5.2-2.1l2.4 2.1c1.1.9 2.7.9 3.7-.2l2.8-2.8c1-1 1-2.6.1-3.7l-2.1-2.4c1-1.6 1.7-3.4 2.1-5.2l3.1-.4c1.5-.2 2.6-1.5 2.6-3v-4c0-1.5-1.1-2.8-2.6-3l-3.1-.4c-.4-1.8-1.1-3.6-2.1-5.2l2.1-2.4c.9-1.1.9-2.7-.2-3.7l-2.8-2.8c-1-1-2.6-1-3.7-.1l-2.4 2.1c-1.6-1-3.4-1.7-5.2-2.1l-.4-3.1c-.2-1.5-1.5-2.6-3-2.6h-4z" fill="none" stroke="currentColor" stroke-width="2.5" />
-        </svg>
-      </div>
-
-      <div class="container">
-        
-        <div class="section-header">
-          <span class="badge">Nasze Atuty</span>
-          <h2>Dlaczego My?</h2>
-          <p>Gwarantujemy w pełni bezpieczne i profesjonalne złomowanie pojazdów.</p>
-        </div>
-
-        <div class="why-grid" id="why-reasons">
-          
-          <!-- Card 1 -->
-          <div class="why-card steel-card" id="why-1">
-            <div class="rivets-container">
-              <div class="rivet rivet-tl"></div>
-              <div class="rivet rivet-tr"></div>
-              <div class="rivet rivet-bl"></div>
-              <div class="rivet rivet-br"></div>
-            </div>
-            <div class="why-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            </div>
-            <h3>Szybki Odbiór</h3>
-            <p>Przyjeżdżamy po pojazd własną lawetą tego samego dnia od zgłoszenia.</p>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="why-card steel-card" id="why-2">
-            <div class="rivets-container">
-              <div class="rivet rivet-tl"></div>
-              <div class="rivet rivet-tr"></div>
-              <div class="rivet rivet-bl"></div>
-              <div class="rivet rivet-br"></div>
-            </div>
-            <div class="why-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="8" r="6" />
-                <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
-              </svg>
-            </div>
-            <h3>Profesjonalna obsługa</h3>
-            <p>Dzięki wieloletniemu doświadczeniu w branży motoryzacyjnej obsługujemy klientów na najwyższym poziomie.</p>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="why-card steel-card" id="why-3">
-            <div class="rivets-container">
-              <div class="rivet rivet-tl"></div>
-              <div class="rivet rivet-tr"></div>
-              <div class="rivet rivet-bl"></div>
-              <div class="rivet rivet-br"></div>
-            </div>
-            <div class="why-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-            </div>
-            <h3>Legalny Proces</h3>
-            <p>Otrzymasz oficjalne zaświadczenie o kasacji, potrzebne do wyrejestrowania auta.</p>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="why-card steel-card" id="why-4">
-            <div class="rivets-container">
-              <div class="rivet rivet-tl"></div>
-              <div class="rivet rivet-tr"></div>
-              <div class="rivet rivet-bl"></div>
-              <div class="rivet rivet-br"></div>
-            </div>
-            <div class="why-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#530409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z"/></svg>
-            </div>
-            <h3>0 zł Ukrytych Opłat</h3>
-            <p>Wycena, dojazd lawety oraz transport pojazdu są w pełni darmowe – zero opłat.</p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
 
     <!-- SEKCJA – GALERIA REALIZACJI -->
     <section class="realizations section-padding" id="realizations" style="background-color: var(--color-secondary);">
@@ -3538,66 +3179,10 @@
       </div>
     </section>
 
-    <!-- SEKCJA 8 – LICZNIKI ZALET -->
-    <section class="counters section-padding tread-pattern-light" id="stats">
-      <div class="container">
-        <div class="counters-grid" id="counters-list">
-          
-          <!-- Counter 1 -->
-          <div class="counter-item" id="counter-1">
-            <div class="counter-number">100<span>%</span></div>
-            <div class="counter-label">Legalności</div>
-            <p class="counter-desc">Oficjalne dokumenty i zaświadczenia.</p>
-          </div>
-
-          <!-- Counter 2 -->
-          <div class="counter-item" id="counter-2">
-            <div class="counter-number">24<span>/</span>7</div>
-            <div class="counter-label">Kontakt</div>
-            <p class="counter-desc">Telefony odbieramy o każdej porze.</p>
-          </div>
-
-          <!-- Counter 3 -->
-          <div class="counter-item" id="counter-3">
-            <div class="counter-number">0<span> zł</span></div>
-            <div class="counter-label">Koszt Odbioru</div>
-            <p class="counter-desc">Darmowa laweta pod wskazany adres.</p>
-          </div>
-
-          <!-- Counter 4 -->
-          <div class="counter-item" id="counter-4">
-            <div class="counter-number">100<span>%</span></div>
-            <div class="counter-label">Pomocy</div>
-            <p class="counter-desc">Pomoc w urzędzie i zwrocie ubezpieczenia.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- SEKCJA 9 – FACEBOOK -->
-    <section class="facebook-section section-padding" id="facebook">
-      <div class="container">
-        <div class="fb-card" id="facebook-card">
-          <div class="fb-icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-          </div>
-          <h3>Odwiedź Nas na Facebooku</h3>
-          <p>
-            Zobacz nasze ostatnie realizacje, opinie klientów i codzienny skup pojazdów na żywo na naszym profilu!
-          </p>
-          <a href="https://www.facebook.com/profile.php?id=61552961669043" class="btn btn-dark" target="_blank" rel="noopener noreferrer" id="btn-fb-link" style="background-color: #1877f2; border-color:#1877f2; box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right:0.25rem;"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-            Przejdź do profilu Facebook
-          </a>
-        </div>
-      </div>
-    </section>
-
     <!-- INDUSTRIAL HAZARD DIVIDER -->
     <div class="industrial-hazard-bar"></div>
 
-    <!-- SEKCJA 10 – DUŻE CTA SECTION -->
+    <!-- SEKCJA – DUŻE CTA SECTION -->
     <section class="big-cta" id="cta-action">
       <div class="container">
         
@@ -3719,8 +3304,6 @@
             <h3>Nawigacja</h3>
             <ul class="footer-links-list">
               <li><a href="#services">Nasze Usługi</a></li>
-              <li><a href="#co-skupujemy">Co Skupujemy</a></li>
-              <li><a href="#legal-scrap">Legalne Złomowanie</a></li>
               <li><a href="#how-it-works">Jak to Działa</a></li>
               <li><a href="#realizations">Galeria Realizacji</a></li>
               <li><a href="#area">Obszar Działania</a></li>
